@@ -5,20 +5,20 @@ kind: cohort
 tagline: A community-led AI study group running cohorts of learners through
   structured curricula, peer learning, and mentorship.
 description: >-
-  TRI AI Saturdays is the flagship teaching programme of TRI AI
-  (Artificial Intelligence Teaching, Research and Innovation for Africa). It is
-  a community-led AI study group that has run ten cohorts of learners since
-  2018, combining curated curricula with weekly meet-ups, mentorship from
-  working AI practitioners, and hands-on capstone projects.
+  TRI AI Saturdays is the flagship teaching programme of TRI AI (Artificial
+  Intelligence Teaching, Research and Innovation for Africa). It is a
+  community-led AI study group that has run ten cohorts of learners since 2018,
+  combining curated curricula with weekly meet-ups, mentorship from working AI
+  practitioners, and hands-on capstone projects.
 
 
   The programme was founded in Lagos in 2018 to address one specific gap: the shortage of accessible, structured AI education for engineers and curious learners in Nigeria. Since then, the community has grown beyond Lagos to include learners across the African continent.
 status: active
 cover: https://res.cloudinary.com/kenechi-dukor/image/upload/v1779493712/TRI%20AI/ai6_simj2o.png
-cohortInfo: Application for Cohort 10 closed May 17, 2026
+cohortInfo: Cohort 10 running now · applications for Cohort 11 announced via the newsletter
 cadence: 16-week cohorts, multiple per year
 partner: Google DeepMind (Cohort 10)
-applyUrl: ""
+applyUrl: https://tri-ai.org/programmes/tri-ai-saturdays/cohorts/10/
 githubUrl: https://github.com/AISaturdaysLagos
 websiteUrl: https://www.aisaturdayslagos.com/
 order: 1
@@ -30,47 +30,6 @@ AI Saturdays Lagos began in 2018 as a small community study group of enthusiasts
 Nearly a decade later, the programme has grown into a continent-spanning network of alumni working at AI labs, research groups, and product teams. Several alumni return as mentors and instructors for subsequent cohorts. The programme is now run under the **TRI AI** umbrella alongside research initiatives like the Sauti Project and ChowNet.
 
 ![A TRI AI Saturdays classroom session, with learners working through curriculum together](https://res.cloudinary.com/kenechi-dukor/image/upload/v1779462564/TRI%20AI/Frame_29_xceyvh.png)
-
-## Cohort history
-
-Ten cohorts, in the open, spanning 2018 to today.
-
-### Cohort 10 · 2026
-- Hybrid, with Google DeepMind
-- AI Research Foundations (Courses 1–4), Small Language Models
-
-### Cohort 9 · 2025
-- Flipped classroom
-- Curated lectures with Saturday discussion
-- 10 capstone teams
-
-### Cohort 7 · 2024
-- 16-week classes + 11-week practicals
-- Team-based capstones on real-estate, recommendation, food prices
-
-### Cohort 6 · 2023
-- In-person
-- Cumulative project archive on GitHub
-
-### Cohort 5 · 2022
-- Two tracks: Data Science / ML and Deep Learning
-- 8 capstone teams
-
-### Cohort 4 · 2021
-- Four tracks: Data Science, ML, Computer Vision, NLP
-
-### Cohort 3 · 2019
-- Two parallel tracks: Machine Learning and Deep Learning
-
-### Cohort 2 · 2018
-- In-person
-- Building on the inaugural intake
-
-### Cohort 1 · 2018
-- In-person, inaugural
-- Deep learning framework survey across five teams
-
-Full archive on the [cohort archive page](/programmes/tri-ai-saturdays/cohorts/).
 
 ## What participants do
 
