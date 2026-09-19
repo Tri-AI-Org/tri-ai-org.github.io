@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: development
 
 # Editor previews use the live site
 site_url: https://tri-ai.org
@@ -299,3 +299,51 @@ collections:
         default: parent
       - { label: Project, name: project, widget: string, required: false, hint: 'e.g. Sauti Project, ChowNet' }
       - { label: Order, name: order, widget: number, default: 0, value_type: int }
+  # ─────────── Events ───────────
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: src/content/events
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    summary: '{{title}} - {{location}}'
+    sortable_fields: [date, title]
+    media_folder: /public/uploads/events
+    public_folder: /uploads/events
+    view_filters:
+      - { label: Workshops, field: kind, pattern: workshop }
+      - { label: Conferences, field: kind, pattern: conference }
+      - { label: Meetups, field: kind, pattern: meetup }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: End date, name: endDate, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, required: false, hint: 'Only for multi-day events. Leave blank for single-day.' }
+      - { label: Location, name: location, widget: string, hint: 'e.g. Lagos, Nigeria  ·  or  Kigali · Deep Learning Indaba' }
+      - label: Kind
+        name: kind
+        widget: select
+        options: [workshop, conference, meetup, talk, hackathon, graduation]
+        default: workshop
+      - label: Division
+        name: division
+        widget: select
+        options: [parent, teaching, research, innovation]
+        default: parent
+      - { label: Excerpt, name: excerpt, widget: text, hint: 'One-line summary shown on the events grid.' }
+      - { label: Cover image, name: cover, widget: image, hint: 'Main image for the card and the top of the event page.' }
+      - label: Photo gallery
+        name: gallery
+        widget: list
+        required: false
+        label_singular: Photo
+        summary: '{{fields.caption}}'
+        hint: 'Add a handful of the best photos. Each can have an optional caption.'
+        fields:
+          - { label: Photo, name: src, widget: image }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Partner / co-host, name: partner, widget: string, required: false }
+      - { label: External link, name: externalUrl, widget: string, required: false, hint: 'Event page, recording, or write-up elsewhere.' }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Write-up, name: body, widget: markdown, hint: 'What happened at the event.' }

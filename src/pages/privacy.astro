@@ -1,0 +1,158 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Last substantive update to this policy. Bump when you change it.
+const lastUpdated = 'February 2026';
+const contactEmail = 'info@tri-ai.org';
+---
+
+<Base
+  title="Privacy Policy - TRI AI"
+  description="How TRI AI collects, uses, and protects your personal data."
+>
+  <article class="legal">
+    <div class="container legal-inner">
+      <header class="legal-head">
+        <p class="eyebrow mono">Legal</p>
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-updated mono">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="legal-body">
+        <p>
+          TRI AI (Artificial Intelligence Teaching, Research and Innovation for Africa Ltd/Gte) ("TRI AI", "we", "us") is committed to protecting your privacy. This policy explains what personal data we collect, why we collect it, how we use it, and the rights you have over it. It applies to visitors to tri-ai.org and to people who interact with our programmes, newsletter, and donation channels.
+        </p>
+
+        <h2>Who we are</h2>
+        <p>
+          TRI AI is a non-governmental organisation based in Lagos, Nigeria, working on AI education, research, and innovation across Africa. For any privacy-related question, contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        </p>
+
+        <h2>What data we collect</h2>
+        <p>We collect only what we need to run our programmes and communicate with our community:</p>
+        <ul>
+          <li><strong>Newsletter subscriptions.</strong> When you subscribe to The Encoder, we collect your email address and, optionally, your first and last name.</li>
+          <li><strong>Donations.</strong> When you donate, payment is processed by Paystack. We do not see or store your card details — those are handled entirely by Paystack. We may receive confirmation of a completed donation, including the donor name and email you provide to Paystack.</li>
+          <li><strong>Programme applications.</strong> When you apply to a cohort or programme, you may submit your name, email, and background information through the application form or by email.</li>
+          <li><strong>Contact.</strong> When you email us or fill in a contact form, we receive whatever information you choose to send.</li>
+          <li><strong>Technical data.</strong> Like most websites, our host records standard technical information such as browser type, device, and approximate location derived from your IP address. This is used for security and to understand aggregate traffic, not to identify you.</li>
+        </ul>
+
+        <h2>How we use your data</h2>
+        <ul>
+          <li>To send you The Encoder newsletter, if you have subscribed.</li>
+          <li>To process and acknowledge donations.</li>
+          <li>To review and respond to programme applications.</li>
+          <li>To respond to your enquiries.</li>
+          <li>To maintain the security and performance of our website.</li>
+        </ul>
+        <p>We do not sell your personal data. We do not use it for automated decision-making or profiling.</p>
+
+        <h2>Third parties we work with</h2>
+        <p>We rely on a small number of trusted service providers who process data on our behalf:</p>
+        <ul>
+          <li><strong>Paystack</strong> — payment processing for donations. See Paystack's own privacy policy for how they handle payment data.</li>
+          <li><strong>Netlify</strong> — website hosting and form handling.</li>
+          <li><strong>Our newsletter provider</strong> — delivery of The Encoder. Your subscription details are stored with them for this purpose only.</li>
+        </ul>
+        <p>
+          Each of these providers is bound by their own privacy commitments. We share only the minimum data needed for each to perform its function.
+        </p>
+
+        <h2>How long we keep your data</h2>
+        <p>
+          We keep personal data only as long as necessary for the purpose it was collected. Newsletter data is kept until you unsubscribe. Application data is kept for the duration of the relevant programme cycle and a reasonable period afterwards. You can ask us to delete your data at any time (see below).
+        </p>
+
+        <h2>Your rights</h2>
+        <p>Depending on your location, you may have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you.</li>
+          <li>Ask us to correct inaccurate data.</li>
+          <li>Ask us to delete your data.</li>
+          <li>Withdraw consent (for example, by unsubscribing from the newsletter — every issue includes an unsubscribe link).</li>
+          <li>Object to or restrict certain processing.</li>
+        </ul>
+        <p>
+          To exercise any of these rights, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We aim to respond within 30 days. We comply with Nigeria's Data Protection Regulation (NDPR) and, where applicable, the EU General Data Protection Regulation (GDPR).
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+          Our site uses minimal cookies — primarily to remember your theme preference (light or dark mode) and whether you have dismissed an announcement banner. These are stored in your browser and are not used to track you across other sites. We do not currently run advertising cookies.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+          Our services are intended for people aged 16 and older. We do not knowingly collect data from children under 16. If you believe a child has provided us with personal data, contact us and we will delete it.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this policy from time to time. When we make significant changes, we will update the "last updated" date at the top of this page. We encourage you to review it periodically.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy or your data can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        </p>
+
+        <div class="legal-placeholder mono">
+          Before publishing: confirm the registered company address, the specific newsletter provider name, your chosen data-retention periods, and have this reviewed by someone with legal knowledge for your jurisdiction. Update the minimum age if it differs from 16.
+        </div>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .legal-inner { max-width: 760px; }
+  .legal-head { padding-block: clamp(40px, 6vw, 72px) 32px; }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .legal-title {
+    font-size: var(--t-display-l);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .legal-updated { color: var(--ink-faint); font-size: var(--t-mono-sm); letter-spacing: 0.1em; }
+
+  .legal-body { padding-bottom: clamp(56px, 8vw, 96px); }
+  .legal-body p { font-size: 16px; line-height: 1.7; color: var(--ink-mid); margin-bottom: 18px; }
+  .legal-body h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 40px 0 14px;
+    letter-spacing: -0.01em;
+  }
+  .legal-body ul { padding-left: 22px; margin-bottom: 18px; }
+  .legal-body li { font-size: 16px; line-height: 1.65; color: var(--ink-mid); margin-bottom: 8px; }
+  .legal-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+  }
+  .legal-body a:hover { color: var(--gold-deep); }
+  [data-theme='dark'] .legal-body a:hover { color: var(--gold); }
+
+  .legal-placeholder {
+    margin-top: 40px;
+    padding: 16px 18px;
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    font-size: var(--t-mono-sm);
+    line-height: 1.6;
+    color: var(--ink-mid);
+  }
+</style>

@@ -11,6 +11,7 @@ const cols = [
       { label: 'Team', href: '/about#team' },
       { label: 'Partners', href: '/about#partners' },
       { label: 'Blog', href: '/blog' },
+      { label: 'Events', href: '/events' },
       { label: 'Innovation', href: '/innovation' },
       { label: 'Contact', href: '/contact' },
     ],
@@ -80,6 +81,10 @@ const cols = [
       <p class="ftr-copy">
         © {year} TRI AI - Artificial Intelligence Teaching Research and Innovation for Africa Ltd/Gte.
       </p>
+      <div class="ftr-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
       <div class="ftr-social" aria-label="Social">
         <a href="https://linkedin.com/company/triaiorg" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
         <a href="https://x.com/AISaturdayLagos" target="_blank" rel="noopener" aria-label="X / Twitter">X</a>
@@ -155,6 +160,17 @@ const cols = [
     color: var(--ink-faint);
     max-width: 70ch;
   }
+  .ftr-legal { display: flex; gap: 18px; }
+  .ftr-legal a {
+    font-size: 12px;
+    color: var(--ink-mid);
+    font-family: var(--font-mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .ftr-legal a:hover { color: var(--gold-deep); }
+  [data-theme='dark'] .ftr-legal a:hover { color: var(--gold); }
   .ftr-social { display: flex; gap: 18px; }
   .ftr-social a {
     font-size: 12px;

@@ -13,15 +13,48 @@
   <!-- Netlify Identity widget for auth -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+  <!-- Enable manual init so we can override the Git branch per environment.
+       Must be set BEFORE the Decap script loads. -->
+  <script>window.CMS_MANUAL_INIT = true;</script>
+
   <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
+    // ── Environment-agnostic branch selection ─────────────────────────
+    // The CMS reads and writes content on one Git branch. We want that
+    // branch to match the environment the /admin page is served from, so
+    // nobody has to hand-edit config.yml per environment:
+    //
+    //   production hostname          -> main
+    //   everything else (dev site,   -> development
+    //   deploy previews, localhost)
+    //
+    // How it works: Decap still loads config.yml normally (that stays the
+    // single source of truth for all collections). We only pass a tiny
+    // override object here; Decap MERGES it over config.yml, replacing
+    // just the backend branch. Nothing else is duplicated.
+    //
+    // To add a production hostname later, add it to PROD_HOSTS. Anything
+    // not listed falls through to `development`, which is the safe default:
+    // a stray preview URL should never write to production content.
+    var PROD_HOSTS = ['tri-ai.org', 'www.tri-ai.org'];
+    var isProd = PROD_HOSTS.indexOf(window.location.hostname) !== -1;
+    var targetBranch = isProd ? 'main' : 'development';
+
+    window.initCMS({
+      config: {
+        backend: {
+          branch: targetBranch,
+        },
+      },
+    });
+
     // Redirect from Netlify Identity → CMS after login
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
+      window.netlifyIdentity.on('init', function (user) {
         if (!user) {
-          window.netlifyIdentity.on('login', () => {
+          window.netlifyIdentity.on('login', function () {
             document.location.href = '/admin/';
           });
         }
