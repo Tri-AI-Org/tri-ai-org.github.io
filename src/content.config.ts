@@ -176,4 +176,35 @@ const press = defineCollection({
   }),
 });
 
-export const collections = { publications, programmes, cohorts, courses, team, partners, news, press };
+/**
+ * `events` - past (and upcoming) events TRI AI hosted or took part in:
+ * workshops, conference appearances, meetups, talks, hackathons.
+ * Each event has a write-up (markdown body) and a photo gallery.
+ * Images are uploaded through the CMS into /uploads/events/.
+ */
+const events = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    endDate: z.coerce.date().optional(),   // for multi-day events
+    location: z.string(),                   // e.g. "Lagos, Nigeria" or "Kigali · Deep Learning Indaba"
+    kind: z.enum(['workshop', 'conference', 'meetup', 'talk', 'hackathon', 'graduation']).default('workshop'),
+    division: z.enum(['parent', 'teaching', 'research', 'innovation']).default('parent'),
+    excerpt: z.string(),                     // one-line summary for cards
+    cover: z.string(),                       // hero / card image
+    // Photo gallery: each image has a src and optional caption. Uploaded
+    // through the CMS. Kept small per-event to avoid bloating the repo —
+    // pick the best handful rather than every photo taken.
+    gallery: z.array(z.object({
+      src: z.string(),
+      caption: z.string().optional(),
+    })).default([]),
+    partner: z.string().optional(),          // co-host / partner org
+    externalUrl: z.string().url().optional(),// event page, recording, etc.
+    featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { publications, programmes, cohorts, courses, team, partners, news, press, events };

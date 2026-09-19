@@ -1,0 +1,228 @@
+---
+import Base from '../../layouts/Base.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { getCollection } from 'astro:content';
+
+const events = (await getCollection('events', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const now = new Date();
+const upcoming = events.filter(e => (e.data.endDate ?? e.data.date) >= now);
+const past = events.filter(e => (e.data.endDate ?? e.data.date) < now);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+const fmtRange = (start: Date, end?: Date) => {
+  if (!end) return fmt(start);
+  return `${start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${fmt(end)}`;
+};
+
+const kindLabel: Record<string, string> = {
+  workshop: 'Workshop',
+  conference: 'Conference',
+  meetup: 'Meetup',
+  talk: 'Talk',
+  hackathon: 'Hackathon',
+  graduation: 'Graduation',
+};
+
+const oldestYear = past.length > 0
+  ? Math.min(...past.map(e => e.data.date.getFullYear()))
+  : null;
+---
+
+<Base
+  title="Events - TRI AI"
+  description="Workshops, conferences, meetups, and community gatherings - past and upcoming events from TRI AI."
+>
+  <section class="section">
+    <div class="container">
+      <header class="ev-head" data-reveal>
+        <p class="eyebrow mono">Events</p>
+        <h1 class="ev-title">Where the community meets.</h1>
+        <p class="ev-lede">
+          Workshops, conference appearances, graduations, and meetups - a record of the moments the TRI AI community came together in person and online.
+        </p>
+        {past.length > 0 && oldestYear && (
+          <p class="ev-stat mono">
+            <span class="ev-stat-num">{past.length}</span>
+            past {past.length === 1 ? 'event' : 'events'}
+            <span class="ev-stat-sep" aria-hidden="true">·</span>
+            From {oldestYear} to today
+          </p>
+        )}
+      </header>
+
+      {events.length === 0 && (
+        <p class="ev-empty">Events will appear here as they happen. Add them via the CMS at /admin.</p>
+      )}
+
+      {upcoming.length > 0 && (
+        <div class="ev-group" data-reveal>
+          <h2 class="ev-group-h mono">Upcoming</h2>
+          <ul class="ev-grid" data-reveal-stagger>
+            {upcoming.map(e => (
+              <li class="ev-card">
+                <a href={`/events/${e.id}`} class="ev-card-link">
+                  <div class="ev-card-img">
+                    <img src={e.data.cover} alt={e.data.title} loading="lazy" />
+                    <span class="ev-card-kind mono">{kindLabel[e.data.kind]}</span>
+                  </div>
+                  <div class="ev-card-body">
+                    <p class="ev-card-meta mono">
+                      {fmtRange(e.data.date, e.data.endDate)}
+                      <span class="ev-card-sep" aria-hidden="true">·</span>
+                      {e.data.location}
+                    </p>
+                    <h3 class="ev-card-title">{e.data.title}</h3>
+                    <p class="ev-card-excerpt">{e.data.excerpt}</p>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {past.length > 0 && (
+        <div class="ev-group" data-reveal>
+          {upcoming.length > 0 && <h2 class="ev-group-h mono">Past events</h2>}
+          <ul class="ev-grid" data-reveal-stagger>
+            {past.map(e => (
+              <li class="ev-card">
+                <a href={`/events/${e.id}`} class="ev-card-link">
+                  <div class="ev-card-img">
+                    <img src={e.data.cover} alt={e.data.title} loading="lazy" />
+                    <span class="ev-card-kind mono">{kindLabel[e.data.kind]}</span>
+                  </div>
+                  <div class="ev-card-body">
+                    <p class="ev-card-meta mono">
+                      {fmtRange(e.data.date, e.data.endDate)}
+                      <span class="ev-card-sep" aria-hidden="true">·</span>
+                      {e.data.location}
+                    </p>
+                    <h3 class="ev-card-title">{e.data.title}</h3>
+                    <p class="ev-card-excerpt">{e.data.excerpt}</p>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Newsletter />
+</Base>
+
+<style>
+  .ev-head { max-width: 720px; padding-block: clamp(40px, 6vw, 72px) 48px; }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .ev-title {
+    font-size: var(--t-display-l);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .ev-lede { font-size: 16.5px; line-height: 1.6; color: var(--ink-mid); }
+  .ev-stat { margin-top: 20px; color: var(--ink-faint); font-size: var(--t-mono-sm); letter-spacing: 0.1em; }
+  .ev-stat-num { color: var(--gold-deep); font-weight: 700; }
+  [data-theme='dark'] .ev-stat-num { color: var(--gold); }
+  .ev-stat-sep { margin-inline: 10px; }
+  .ev-empty { color: var(--ink-mid); padding: 32px 0; }
+
+  .ev-group { margin-bottom: 56px; }
+  .ev-group-h {
+    font-size: var(--t-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  [data-theme='dark'] .ev-group-h { color: var(--gold); }
+
+  .ev-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+  }
+  .ev-card-link {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-elev);
+    transition: border-color 0.2s, transform 0.2s var(--ease-quick);
+    height: 100%;
+  }
+  .ev-card-link:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .ev-card-img {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: var(--bg-soft);
+  }
+  .ev-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--ease);
+  }
+  .ev-card-link:hover .ev-card-img img { transform: scale(1.04); }
+  .ev-card-kind {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: var(--t-mono-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .ev-card-body { padding: 20px 22px 24px; }
+  .ev-card-meta {
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .ev-card-sep { margin-inline: 8px; }
+  .ev-card-title {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .ev-card-link:hover .ev-card-title { color: var(--gold-deep); }
+  [data-theme='dark'] .ev-card-link:hover .ev-card-title { color: var(--gold); }
+  .ev-card-excerpt {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+</style>
