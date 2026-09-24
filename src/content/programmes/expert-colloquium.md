@@ -41,15 +41,16 @@ State-of-the-art ML and AI research: large language models, diffusion models, RL
 
 African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.
 
- **Date:** TBD
- **Time:** TBD
+#### Date: TBD
+ 
+#### Time: TBD
 
 ### Theme C: AI in industry and product
 
 Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.
 
- **Date:** TBD
- **Time:** TBD
+ - #### Date: TBD
+ - #### Time: TBD
 
 Theme D: Ethics, policy, and governance
 
