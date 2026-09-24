@@ -12,6 +12,7 @@ status: active
 cover: /uploads/expert-colloquium.png
 location: Virtual
 cadence: Monthly
+applyUrl: https://docs.google.com/forms/d/1kNghEQuLtXJugO2yTs3_BimTo4fh7d-MTpPqTPc3B5k/edit
 order: 5
 ---
 ## What it is
@@ -25,6 +26,31 @@ Colloquia close the loop between TRI AI's learners and the people producing the 
 ## Who attends
 
 Open to TRI AI cohort graduates, partner institution students, and invited members of the wider community. Capacity is limited at in-person events. The livestream is unrestricted.
+
+## Upcoming Themes
+
+Theme A: Research frontiers
+
+State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.
+
+
+Theme B: AI for Africa
+
+African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.
+
+
+Theme C: AI in industry and product
+
+Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.
+Theme D: Ethics, policy, and governance
+
+Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.
+
+
+Theme E: Inspiration and pathways
+
+Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.
+
 
 ## Past colloquia
 
