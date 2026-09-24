@@ -57,6 +57,7 @@ Theme D: Ethics, policy, and governance
 Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.
 
  **Date:** TBD
+
  **Time:** TBD
 
 Theme E: Inspiration and pathways
