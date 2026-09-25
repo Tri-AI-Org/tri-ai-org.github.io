@@ -4,7 +4,7 @@ title: "From Signal to Structure: TRI AI Cohort 10 Completes Course 3 of Google
 date: 2026-09-23
 division: teaching
 excerpt: A progress diary from the TRI AI Saturdays organising team
-cover: /uploads/1001183145.jpeg
+cover: ""
 draft: false
 ---
 In our [previous post](https://tri-ai.org/blog/from-raw-text-to-meaning-cohort-10-completes-course-2/), we told you how Cohort 10 turned raw multilingual text into vectors a model could reason about, wrapping Course 2 with tokenizers built from scratch and words clustering by meaning in vector space. After a well-earned Week 7 break after an intensive six weeks of learning and going through courses 1 & 2, the cohort came back for a different kind of challenge: not how to represent language, but how a model actually learns.
