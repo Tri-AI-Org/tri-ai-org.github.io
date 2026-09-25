@@ -33,9 +33,9 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
 
 State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.
 
-* #### **Date:** TBD
+* **Date:** TBD
 
-* #### **Time:** TBD
+* **Time:** TBD
 
 ### Theme B: AI for Africa
 
