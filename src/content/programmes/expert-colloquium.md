@@ -33,9 +33,9 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
 
 State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.
 
-* #### **Date:** TBD
+* **Date:** TBD
 
-* #### **Time:** TBD
+* **Time:** TBD
 
 ### Theme B: AI for Africa
 
@@ -49,8 +49,9 @@ African NLP, speech and accent technology, African image datasets, AI for health
 
 Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.
 
-* #### Date: TBD
-* #### Time: TBD
+* **Date:** TBD
+
+* **Time:** TBD
 
 Theme D: Ethics, policy, and governance
 
