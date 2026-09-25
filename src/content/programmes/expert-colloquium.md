@@ -49,8 +49,9 @@ African NLP, speech and accent technology, African image datasets, AI for health
 
 Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.
 
-* #### Date: TBD
-* #### Time: TBD
+* **Date:** TBD
+
+* **Time:** TBD
 
 Theme D: Ethics, policy, and governance
 
