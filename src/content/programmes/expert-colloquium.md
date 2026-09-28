@@ -53,7 +53,7 @@ Building and deploying AI products: MLOps, model evaluation, responsible AI in p
 
 * **Time:** TBD
 
-Theme D: Ethics, policy, and governance
+### Theme D: Ethics, policy, and governance
 
 Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.
 
@@ -61,7 +61,7 @@ Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountabi
 
 * **Time:** TBD
 
-Theme E: Inspiration and pathways
+### Theme E: Inspiration and pathways
 
 Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.
 
