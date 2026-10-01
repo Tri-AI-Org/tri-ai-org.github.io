@@ -10,7 +10,7 @@ draft: false
 
 **SEPTEMBER 2026**
 
-![Quote ](/uploads/1001204370.jpg)
+![Quote ](/uploads/1001204417.jpg)
 
 
 
@@ -184,7 +184,7 @@ A prototype starts with an idea and gives it a form that can be tested. It may c
 
 That represents the central idea of this month's edition: **taking an idea, testing it, learning from what happens, and gradually turning it into something useful.**
 
-![Ads](https://www.bestregards.me/broadcasts/broadcast_4l4wzkjg04wr0qltxxft?env=prod)
+![Ads](/uploads/1001204417.jpg)
 
 ## Thanks for reading.
 
