@@ -12,8 +12,6 @@ draft: false
 
 ![Quote ](/uploads/1001204370.jpg)
 
-
-
 This month, we’re looking at what happens when AI knowledge moves into action. Our Cohort 10 students are turning what they’ve learned into solutions for real-world problems, while across Africa, new AI policies and emerging trends are shaping the environment in which this innovation takes place.
 
 In this edition, we spotlight the projects our students are building, their experience learning about small language models, and the policies and trends shaping Africa’s AI landscape.
@@ -69,8 +67,6 @@ For his Cohort 10 project, Lawrence built SuperBPE, a tokenizer designed to bett
 Through the project, he learned by building and gained a deeper understanding of the relationship between data, language representation, and AI systems.
 
 ### MEET THE BUILDERS
-
-
 
 After weeks of learning, experimenting, and building, nine teams made it to the Cohort 10 finals from more than 70 teams.
 
@@ -180,9 +176,11 @@ The conference takes place **20–21 October 2026 in Abuja**.
 
 ### Did You Crack the Code?
 
+> *“I start with a problem, but I am not the problem. I begin with an idea, I grow through testing, and I may fail before I work. I can start as a sketch and become something people can use. What am I?"*
+
 **Answer: A Prototype**
 
-A prototype starts with an idea and gives it a form that can be tested. It may change, fail, or be rebuilt before becoming something useful.
+> A prototype starts with an idea and gives it a form that can be tested. It may change, fail, or be rebuilt before becoming something useful.
 
 That represents the central idea of this month's edition: **taking an idea, testing it, learning from what happens, and gradually turning it into something useful.**
 
