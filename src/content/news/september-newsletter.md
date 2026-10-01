@@ -28,13 +28,15 @@ But before we dive into this month’s stories, let’s put your problem-solving
 
 Learning, building, and growing one session at a time.
 
+![Some faces of cohort 10 Students ](https://www.bestregards.me/broadcasts/broadcast_4l4wzkjg04wr0qltxxft?env=prod)
+
 Cohort 10 brought together learners at different stages of their AI journey. Some were trying to figure out where to start, while others already had experience with AI projects and wanted to understand more deeply how the systems they were working with actually functioned.
 
-Whether they were completely new to AI or already experimenting with projects, they were looking for something more than theory — a way to connect concepts to real problems.
+Whether they were completely new to AI or already experimenting with projects, they were looking for something more than theory, a way to connect concepts to real problems.
 
-### What Changed?
+## What Changed?
 
-#### Ogechukwu Aina
+### [Ogechukwu Aina](https://www.linkedin.com/in/ogechukwu-aina-msc)
 
 Ogechukwu came into Cohort 10 with programming experience and had previously worked on a RAG project. However, she did not fully understand how the different parts of the system worked together.
 
@@ -42,7 +44,7 @@ Her goal was to move beyond simply using AI tools and understand how these syste
 
 Through the programme, she gained a clearer understanding of how retrieval systems work and how their different components come together. During the Cohort 10 competition, she took on the role of Lead AI Engineer and Technical Architect, helping design and build her team’s RAG system for agricultural information.
 
-#### Joseph Ayemlo
+#### [Joseph Ayemlo](https://www.linkedin.com/in/josephayemlo)
 
 When Joseph decided to start a career in AI and Machine Learning, he did not know where to begin. He searched for roadmaps online and spent months learning mostly through theory, but found it difficult to move into actual coding and implementation.
 
@@ -52,7 +54,7 @@ One of his recent learning milestones was completing the *Discover the Transform
 
 He has also developed a stronger interest in reading research papers and understanding how AI and Machine Learning are applied in research.
 
-#### Lawrence Adagbon
+#### [Lawrence Adagbon](https://www.linkedin.com/in/lawadagbon?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 
 Lawrence also came into Cohort 10 with previous experience building AI systems. His experience included working with RAG, but he wanted to understand more about what was happening underneath the tools.
 
@@ -68,7 +70,7 @@ After weeks of learning, experimenting, and building, nine teams made it to the 
 
 The finalist teams have completed their projects, developing AI-powered solutions to problems across different industries.
 
-**Explore the projects → View the Cohort 10 Projects**
+**Explore the projects → [View the Cohort 10 Finalists Projects](https://tri-ai.org/blog/where-ai-meets-real-problems-the-nine-tri-ai-cohort-10-finalists/)**
 
 The cohort’s work will also be showcased during **Demo Day on Saturday, 3 October 2026, from 11:00 AM to 1:00 PM WAT**.
 
