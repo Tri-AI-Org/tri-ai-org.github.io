@@ -6,11 +6,13 @@ excerpt: When AI Knowledge Moves Into Action | The Encoder, Issue 18
 cover: /uploads/1001204364.jpg
 draft: false
 ---
-![Quote ](/uploads/1001204370.jpg)
-
 ## THE ENCODER · ISSUE №18
 
 **SEPTEMBER 2026**
+
+![Quote ](/uploads/1001204370.jpg)
+
+
 
 This month, we’re looking at what happens when AI knowledge moves into action. Our Cohort 10 students are turning what they’ve learned into solutions for real-world problems, while across Africa, new AI policies and emerging trends are shaping the environment in which this innovation takes place.
 
