@@ -184,7 +184,7 @@ A prototype starts with an idea and gives it a form that can be tested. It may c
 
 That represents the central idea of this month's edition: **taking an idea, testing it, learning from what happens, and gradually turning it into something useful.**
 
-
+![Ads](https://www.bestregards.me/broadcasts/broadcast_4l4wzkjg04wr0qltxxft?env=prod)
 
 ## Thanks for reading.
 
