@@ -124,37 +124,61 @@ Team: Hamna Kaleem and Kamaya Ndigwa Esperance M.
 **Team Nyriagongo: Teaching AI to Reveal What It Already Knows About Toxicity**
 
 
-Team Nyriagongo explored whether a language model already contains a usable signal for detecting toxic content within its internal representations.
 Online platforms and conversational AI systems need to identify abusive, threatening, and harassing content at a scale that manual review cannot easily handle. Traditional approaches such as keyword filters can also miss more subtle forms of hostility, while training a separate model for content moderation can require additional computing resources and produce systems that are difficult to interpret.
-Team Nyriagongo, led by Blessings Mambwe alongside Fafemi Adeola, Musonda Musunga, and Hamna Kaleem, approached the problem from a different direction. Instead of building a larger toxicity classifier or fine tuning an entire language model, they wanted to find out whether a language model already contains information about toxicity that could be extracted with a much simpler method.
+
+
+Team Nyriagongo built a larger toxicity classifier or fine tuning an entire language model. They wanted to find out whether a language model already contains information about toxicity that could be extracted with a much simpler method.
 Their project, Latent Probing for Toxicity Detection, uses Google's Gemma 2 2B language model as a frozen model. The team kept all 2.6 billion parameters unchanged and examined the model's internal representations at a specific layer. They then trained a lightweight linear classifier, known as a probe, to determine whether the information contained in those representations could distinguish between toxic and non toxic content.
-To test the idea, the team built a harmonised dataset containing 108,468 examples from 13 public sources. They developed the complete pipeline, from preparing the data and extracting the model's internal representations to training and validating the probe. Their evaluation also included leave one source out testing, allowing them to examine whether the approach could generalise beyond the individual datasets used to build it.
-The results provided a strong signal that the approach was worth investigating further. The system achieved 89.76 percent accuracy on the CodaBench development set and 92.35 percent on the held out testing set, correctly classifying 1,256 of 1,360 test examples.
-The result is not presented as a finished content moderation product. Instead, Team Nyriagongo sees the project as a research prototype for understanding what information may already be encoded within language models. A simple probe can provide a more transparent way to investigate a specific concept without changing the underlying model, while also making it easier to examine where the approach succeeds and where it fails.
+
+
+To test the idea, the team built a harmonised dataset containing 108,468 examples from 13 public sources. They developed the complete pipeline, from preparing the data and extracting the model's internal representations to training and validating the probe. Their evaluation also included leave one source out testing, allowing them to examine whether the approach could generalise beyond the individual datasets used to build it. The results provided a strong signal that the approach was worth investigating further. The system achieved 89.76 percent accuracy on the CodaBench development set and 92.35 percent on the held out testing set, correctly classifying 1,256 of 1,360 test examples. The result is not presented as a finished content moderation product. Instead, Team Nyriagongo sees the project as a research prototype for understanding what information may already be encoded within language models. A simple probe can provide a more transparent way to investigate a specific concept without changing the underlying model, while also making it easier to examine where the approach succeeds and where it fails.
+
+
 The team also recognises the limitations of treating toxicity as a simple binary classification problem. Language can depend heavily on context, intent, quotation, counterspeech, and cultural differences. Their proposed safeguards include human review, subgroup evaluation, and monitoring for changes in performance over time rather than relying on the system for autonomous enforcement.
+
+
 What makes Team Nyriagongo's project particularly interesting is the question behind it. Rather than assuming that solving a safety problem requires a bigger or more heavily trained model, the team investigated whether existing models already contain useful signals that can be accessed through simpler and more interpretable methods. Their Cohort 10 project offers one measured answer to that question and opens the door to further research into how safety related concepts are represented inside language models.
-Project Repository: Nyiragongo Github Link
+Project Repository: [Nyiragongo Github Link](https://github.com/bleymambwe/C10-team-nyiragongo)
 Team: Blessings Mambwe, Fafemi Adeola, Musonda Musunga, and Hamna Kaleem
 Mentor: Moses
-Team Karisimbi: Building a Medical AI Grounded in Nigerian Clinical Guidance
-Team Karisimbi is developing a small language model for medical advice grounded in Nigerian clinical guidelines.
-Healthcare workers and patients may need reliable medical information at the point of care, yet general purpose AI systems may not always provide information that is grounded in a country's clinical guidelines. Team Karisimbi is exploring how AI can be developed around local medical guidance, using the Nigeria Standard Treatment Guidelines (NSTG) as its initial foundation.
-The team is building a lightweight medical AI pipeline that combines structured clinical knowledge from Nigerian treatment guidelines with retrieval augmented generation and efficient model fine tuning. The system is designed to retrieve relevant medical information and use it to generate concise responses to healthcare questions.
+
+
+**Team Karisimbi: Building a Medical AI Grounded in Nigerian Clinical Guidance**
+
+
+Healthcare workers and patients may need reliable medical information at the point of care, yet general purpose AI systems may not always provide information that is grounded in a country's clinical guidelines. 
+
+Team Karisimbi is exploring how AI can be developed around local medical guidance, using the Nigeria Standard Treatment Guidelines (NSTG) as its initial foundation. The team is building a lightweight medical AI pipeline that combines structured clinical knowledge from Nigerian treatment guidelines with retrieval augmented generation and efficient model fine tuning. The system is designed to retrieve relevant medical information and use it to generate concise responses to healthcare questions.
 The project began through the Kaggle Medical Advice SLM Challenge, where Team Karisimbi developed an early prototype using Gemma 2 2B IT, LoRA fine tuning, and TF IDF retrieval. The prototype produced responses averaging approximately 50 characters, meeting the challenge's requirement for concise medical answers.
 The team is now extending the prototype by incorporating Nigerian clinical guidance into the dataset and model development. The goal is to create a small and efficient system that can provide evidence grounded medical information relevant to the Nigerian healthcare context.
+
+
 Responsible AI is also built into the project. Team Karisimbi has developed a Problem Statement, Data Card, Impact Statement, stakeholder map, and stakeholder engagement plan covering healthcare workers, patients, and community members. These materials address issues such as safety, privacy, fairness, transparency, inclusivity, and community well being.
 The system is intended as a decision support tool rather than a replacement for qualified healthcare professionals. This keeps the project's focus on using AI to support access to relevant medical information while recognising the importance of professional judgment in healthcare.
 The project demonstrates how small language models can be adapted to specific healthcare needs by combining efficient AI techniques with locally relevant clinical knowledge.
-Project Repository: Karisimbi Github Link
+Project Repository: [Karisimbi Github Link](https://github.com/Niklauzi/C10-team-karisimbi)
 Team: Kpokpe Favour Ogheneruese 
-Team Chamo: Teaching AI to Tell the Difference Between Distress and Everyday Emotion
-Team Chamo developed a low latency AI system designed to distinguish clinical distress from everyday expressions of negative emotion.
+
+
+**Team Chamo: Teaching AI to Tell the Difference Between Distress and Everyday Emotion**
+
 People regularly express frustration, sadness, anger, or stress without necessarily experiencing clinical psychological distress. Distinguishing between these everyday emotions and genuine signs of distress can be difficult for automated systems, particularly when they rely on simple keyword matching. In digital mental health platforms, this can lead to false positives and make it harder to identify cases that may require closer attention.
-Team Chamo explored how AI could learn this distinction more effectively. Their goal was to develop a lightweight clinical distress classification system capable of identifying signals of psychological distress while remaining fast enough for practical use.
-The team's prototype uses the internal representations of Gemma 2 2B, focusing on information extracted from one of the model's layers. On top of these representations, they built an ensemble of three lightweight neural networks that work together to classify whether a statement reflects clinical distress or everyday negative emotion.
+
+Team Chamo developed a low latency AI system designed to distinguish clinical distress from everyday expressions of negative emotion. Their goal was to develop a lightweight clinical distress classification system capable of identifying signals of psychological distress while remaining fast enough for practical use.
+
+
+Their prototype uses the internal representations of Gemma 2 2B, focusing on information extracted from one of the model's layers. On top of these representations, they built an ensemble of three lightweight neural networks that work together to classify whether a statement reflects clinical distress or everyday negative emotion.
+
+
 One of the team's key challenges emerged from the data used to train the system. The initial model tended to favour distress predictions, making it more likely to classify ordinary negative emotional statements as clinical distress. To address this, the team introduced 30,000 hard negative examples representing everyday emotional expressions. These examples helped the model learn a clearer distinction between common emotional experiences and statements more strongly associated with psychological distress.
+
+
 The team also focused on keeping the system fast. Rather than relying on heavier software frameworks during inference, they implemented the trained model using a lightweight NumPy based approach, allowing it to make predictions in approximately 0.23 seconds. The prototype achieved an accuracy of 0.9039, demonstrating that a relatively lightweight system could capture a useful signal from the language model's internal representations.
+
+
 The project sits at the intersection of clinical AI triage and edge AI deployment, where speed and efficiency can be important alongside predictive performance. At the same time, a system designed to identify psychological distress requires careful consideration of how its predictions are used, particularly because emotional language can be highly dependent on context.
+
+
 By focusing on the boundary between everyday negative emotion and clinical distress, Team Chamo is exploring how AI could support the identification of potentially important signals without treating every expression of frustration or sadness as a clinical concern. The project demonstrates how careful dataset design, lightweight modelling, and efficient deployment can come together to address a specific challenge in mental health AI.
-Project Repository: Chamo Github Link
+Project Repository: [Chamo Github Link](https://github.com/iamcbn/C10-team-chamo)
 Team: Bruno Nwagbo, Daniel Ohachor, Bassey Emmanuel Francis, Ademola James Aderemi
