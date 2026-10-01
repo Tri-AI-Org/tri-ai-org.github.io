@@ -10,7 +10,7 @@ draft: false
 
 **SEPTEMBER 2026**
 
-![Quote ](/uploads/1001204417.jpg)
+![Quote ](/uploads/1001204370.jpg)
 
 
 
