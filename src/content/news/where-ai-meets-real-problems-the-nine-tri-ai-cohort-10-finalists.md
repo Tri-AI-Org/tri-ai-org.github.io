@@ -60,6 +60,8 @@ The result is a lightweight agricultural AI tool designed to put relevant inform
 The prototype is currently available through Hugging Face Spaces, where users can interact directly with the model.
 Explore the project: [CrawLM Link](https://huggingface.co/spaces/zerothvictor/CrawLM-Playground)
 
+
+
 **Team Binga: Preserving African Folktales Through AI** 
 
 ![](/uploads/screenshot-2026-09-18-142226.png)
@@ -70,6 +72,8 @@ The team developed a domain specific Small Language Model focused on African fol
 Project repository: [Binga Github Link](https://github.com/flexydave/C10-team-Binga)
 Team: David Attah , Bright Francis , Orangun Folaranmi
 Mentor: Patrick Owor
+
+
 
 **Team Bangweulu: Rethinking How AI Processes African Languages**
 
@@ -95,7 +99,11 @@ Early collaborators: Adejare Adedayo and Obasoro Olakunle Adeyemi
 
 **Team Simien: Helping Farmers Find the Right Agronomic Advice**
 
-Team Simien built an AI powered retrieval system designed to help farmers find relevant agronomic information more efficiently. Smallholder farmers often need quick and specific answers when dealing with problems such as nutrient deficiencies, pest outbreaks, or crop diseases. However, much of the expert knowledge available to address these challenges is scattered across agricultural extension materials, making it difficult to identify the most relevant guidance when it is needed.
+![](/uploads/02_problem.png)
+
+![](/uploads/01_pipeline.png)
+
+Smallholder farmers often need quick and specific answers when dealing with problems such as nutrient deficiencies, pest outbreaks, or crop diseases. However, much of the expert knowledge available to address these challenges is scattered across agricultural extension materials, making it difficult to identify the most relevant guidance when it is needed.
 
 
 Team Simien, made up of Hamna Kaleem and Kamaya Ndigwa Esperance M., set out to address this challenge by improving how agricultural information is retrieved. Their project, Optimizing RAG Document Retrieval for Agronomic Advice, focuses on the retrieval component of a retrieval augmented generation system, helping connect farmers' questions with useful agricultural knowledge.
@@ -108,11 +116,8 @@ This approach is particularly important when similar symptoms can have different
 The system combines multiple retrieval and machine learning techniques to improve document ranking. The team evaluated the approach using cross validation and the nDCG@5 metric, comparing its performance with a baseline retrieval method. They also developed a reproducible end to end pipeline, making it possible for others to examine, test, and build on their work.
 
 
-Beyond the technical system, the project highlights some of the practical challenges involved in developing AI for agriculture. Agricultural advice can vary depending on the agro ecological region, while existing knowledge bases may not adequately represent every farming community. Team Simien identified opportunities to involve farmers and agricultural extension professionals in future development, as well as improve support for multilingual and code switched queries.
-
-
-The project demonstrates how AI can be used not simply to generate answers, but to help people reach the right information more efficiently. By improving how agricultural knowledge is retrieved and connected to farmers' questions, Team Simien is exploring a practical way to make existing expertise more accessible to smallholder farming communities.
-Project Repository: Simien Github Link
+Beyond the technical system, the project highlights some of the practical challenges involved in developing AI for agriculture. Agricultural advice can vary depending on the agro ecological region, while existing knowledge bases may not adequately represent every farming community. Simien identified opportunities to involve farmers and agricultural extension professionals in future development, as well as improve support for multilingual and code switched queries.
+Project Repository: [Simien Github Link](https://github.com/Hamna-Kaleem/C10-team-simien)
 Team: Hamna Kaleem and Kamaya Ndigwa Esperance M.
 
 
