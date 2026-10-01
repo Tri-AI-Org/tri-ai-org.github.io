@@ -21,12 +21,13 @@ The team also wanted users to see what happens behind the scenes. They built an 
 
 At the same time, Kinyeti recognizes the limitations of the current prototype. The document collection is primarily in English and often uses technical agricultural language, so the system is not intended to replace agricultural extension officers or independently determine what a farmer should do. Instead, the project provides a foundation that could be expanded with more local language resources, broader agricultural data, and feedback from agricultural extension professionals.
 
-
 Explore the project: [Kinyeti Link](< https://overwatch886sociot--team-kinyeti-rag-ui.modal.run/>)
-Team: Israel Olawuyi Mobolaji · Harry Okah · Edike Jeremiah · Chisom Okafor
-Mentors: Oluwaseun Ajayi · Samuel Taiwo · Adnan Adetunji
 
 
+Team: Israel Olawuyi Mobolaji, Harry Okah, Edike Jeremiah, Chisom Okafor
+
+
+Mentors: Oluwaseun Ajayi, Samuel Taiwo, Adnan Adetunji
 
 **Team Atbara: Building AI for African Customer Complaints**
 
@@ -39,6 +40,8 @@ The dataset represented a range of real world customer experiences, covering ser
 The project also considers the broader implications of deploying AI in customer support. Alongside the model, Atbara developed a data card, impact statement, and stakeholder engagement plan that examined issues such as language bias, automation bias, and the risks of incorrectly handling sensitive complaints.
 In the end, the project asks a question that extends beyond model accuracy: Can an AI system understand a complaint, and can it also recognize when a human should take over?
 For Team Atbara, building a useful customer support system means addressing both sides of that question.
+
+
 Explore the project: [Atbara Github Link](https://github.com/Elocodes/C10-team-atbara)
 
 ![](/uploads/screenshot-2026-09-30-200018.png "Team: Justina Odoeze, Sheree Edmund, Nzube Ohalete, Faith Kasunga, Sheila Nalweyiso")
@@ -58,7 +61,6 @@ Under the hood, CrawLM is built on Meta’s Llama 3.2 3B Instruct model and was 
 The result is a lightweight agricultural AI tool designed to put relevant information into a format that is easier to access and use. Rather than requiring farmers to navigate multiple technical repositories, CrawLM aims to bring a more concentrated source of climate and pest management knowledge into a single interface.
 The prototype is currently available through Hugging Face Spaces, where users can interact directly with the model.
 
-
 Explore the project: [CrawLM Link](https://huggingface.co/spaces/zerothvictor/CrawLM-Playground)
 
 
@@ -71,12 +73,9 @@ African folktales have traditionally been passed down through generations throug
 
 The team developed a domain specific Small Language Model focused on African folktales, using a curated dataset of stories to explore how lightweight AI could work with culturally specific content. Their project combined document retrieval with model fine tuning, allowing them to explore different ways of identifying and working with relevant folktales based on user prompts. Beyond building the technology, the project also encouraged the team to consider important questions around the responsible use of AI for cultural knowledge, including cultural representation, authenticity, bias, copyright, and the role of communities in preserving and sharing their traditions.
 
-
 Project repository: [Binga Github Link](https://github.com/flexydave/C10-team-Binga)
 
-
 Team: David Attah , Bright Francis , Orangun Folaranmi
-
 
 Mentor: Patrick Owor
 
@@ -95,10 +94,20 @@ The project evolved through several rounds of experimentation. Early prototypes 
 Their final system achieved 100% lossless round trip accuracy on their local benchmark and 100% exact accuracy on the competition evaluation set. The results demonstrated that the tokenizer could process the evaluated text while preserving the original content exactly.
 
 For Team Bangweulu, the project represents more than an improvement to tokenization. It highlights the importance of building AI infrastructure that takes African languages into account from the ground up. By improving how African text is represented and processed, the team hopes to contribute to more efficient and accessible language technologies for African communities.
+
+
 Project repository: [Bangweulu Github Link](https://github.com/AtfiWiam/C10-team-Bangweulu)
+
+
 Core project team: Wiam Atfi and George Aladejana
+
+
 Mentor: Elinah Moyo
+
+
 Early collaborators: Adejare Adedayo and Obasoro Olakunle Adeyemi
+
+
 
 **Team Simien: Helping Farmers Find the Right Agronomic Advice**
 
@@ -116,8 +125,14 @@ This approach is particularly important when similar symptoms can have different
 The system combines multiple retrieval and machine learning techniques to improve document ranking. The team evaluated the approach using cross validation and the nDCG@5 metric, comparing its performance with a baseline retrieval method. They also developed a reproducible end to end pipeline, making it possible for others to examine, test, and build on their work.
 
 Beyond the technical system, the project highlights some of the practical challenges involved in developing AI for agriculture. Agricultural advice can vary depending on the agro ecological region, while existing knowledge bases may not adequately represent every farming community. Simien identified opportunities to involve farmers and agricultural extension professionals in future development, as well as improve support for multilingual and code switched queries.
+
+
 Project Repository: [Simien Github Link](https://github.com/Hamna-Kaleem/C10-team-simien)
+
+
 Team: Hamna Kaleem and Kamaya Ndigwa Esperance M.
+
+
 
 **Team Nyriagongo: Teaching AI to Reveal What It Already Knows About Toxicity**
 
@@ -131,9 +146,17 @@ To test the idea, the team built a harmonised dataset containing 108,468 example
 The team also recognises the limitations of treating toxicity as a simple binary classification problem. Language can depend heavily on context, intent, quotation, counterspeech, and cultural differences. Their proposed safeguards include human review, subgroup evaluation, and monitoring for changes in performance over time rather than relying on the system for autonomous enforcement.
 
 What makes Team Nyriagongo's project particularly interesting is the question behind it. Rather than assuming that solving a safety problem requires a bigger or more heavily trained model, the team investigated whether existing models already contain useful signals that can be accessed through simpler and more interpretable methods. Their Cohort 10 project offers one measured answer to that question and opens the door to further research into how safety related concepts are represented inside language models.
+
+
 Project Repository: [Nyiragongo Github Link](https://github.com/bleymambwe/C10-team-nyiragongo)
+
+
 Team: Blessings Mambwe, Fafemi Adeola, Musonda Musunga, and Hamna Kaleem
+
+
 Mentor: Moses
+
+
 
 **Team Karisimbi: Building a Medical AI Grounded in Nigerian Clinical Guidance**
 
@@ -146,8 +169,14 @@ The team is now extending the prototype by incorporating Nigerian clinical guida
 Responsible AI is also built into the project. Team Karisimbi has developed a Problem Statement, Data Card, Impact Statement, stakeholder map, and stakeholder engagement plan covering healthcare workers, patients, and community members. These materials address issues such as safety, privacy, fairness, transparency, inclusivity, and community well being.
 The system is intended as a decision support tool rather than a replacement for qualified healthcare professionals. This keeps the project's focus on using AI to support access to relevant medical information while recognising the importance of professional judgment in healthcare.
 The project demonstrates how small language models can be adapted to specific healthcare needs by combining efficient AI techniques with locally relevant clinical knowledge.
+
+
 Project Repository: [Karisimbi Github Link](https://github.com/Niklauzi/C10-team-karisimbi)
+
+
 Team: Kpokpe Favour Ogheneruese 
+
+
 
 **Team Chamo: Teaching AI to Tell the Difference Between Distress and Everyday Emotion**
 
@@ -164,5 +193,9 @@ The team also focused on keeping the system fast. Rather than relying on heavier
 The project sits at the intersection of clinical AI triage and edge AI deployment, where speed and efficiency can be important alongside predictive performance. At the same time, a system designed to identify psychological distress requires careful consideration of how its predictions are used, particularly because emotional language can be highly dependent on context.
 
 By focusing on the boundary between everyday negative emotion and clinical distress, Team Chamo is exploring how AI could support the identification of potentially important signals without treating every expression of frustration or sadness as a clinical concern. The project demonstrates how careful dataset design, lightweight modelling, and efficient deployment can come together to address a specific challenge in mental health AI.
+
+
 Project Repository: [Chamo Github Link](https://github.com/iamcbn/C10-team-chamo)
+
+
 Team: Bruno Nwagbo, Daniel Ohachor, Bassey Emmanuel Francis, Ademola James Aderemi
