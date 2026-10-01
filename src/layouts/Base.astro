@@ -1,0 +1,177 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noFooter?: boolean;
+}
+
+const {
+  title = 'TRI AI - Teaching, Research, Innovation in AI for Africa',
+  description = 'TRI AI is the institutional home for programmes, research initiatives, and collaborations democratising AI knowledge across the African continent and the global research community.',
+  ogImage = '/og-default.png',
+  noFooter = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:url" content={canonical} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme bootstrap (prevent flash) -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('triai-theme');
+          if (t === 'light' || t === 'dark') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header />
+    <AnnouncementBar />
+    <main id="main">
+      <slot />
+    </main>
+    {!noFooter && <Footer />}
+
+    <!-- Netlify Identity (for Decap CMS auth) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+
+    <!-- Scroll-reveal: hides [data-reveal] and slides them into view as they enter the viewport.
+         Visible-by-default fallback: if this script never runs, content stays visible.
+
+         CRITICAL: the order of operations matters on mobile. If we add the
+         `js-reveal-active` class before marking in-viewport elements as visible,
+         there's a paint window where the entire page is opacity: 0 until the
+         IntersectionObserver fires its first callback. On slow mobile browsers
+         (and after soft navigation through bfcache restore) this window can be
+         long enough that the user sees a blank screen and reaches for refresh.
+
+         Fix: walk targets synchronously, mark every above-the-fold one with
+         .in-view BEFORE adding the gating class. So when the CSS takes effect,
+         the visible content is already exempt. The observer only animates
+         elements scrolled to later. Result: zero-blank-screen window. -->
+    <script is:inline>
+      (function () {
+        if (typeof window === 'undefined' || typeof document === 'undefined') return;
+        var root = document.documentElement;
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Reduced motion: skip the animation entirely. Content is already visible by default.
+        if (prefersReduced) return;
+
+        // No IntersectionObserver: skip animations, content stays visible by default.
+        if (!('IntersectionObserver' in window)) return;
+
+        function setup() {
+          var targets = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
+          var viewportH = window.innerHeight || document.documentElement.clientHeight;
+
+          // Phase 1 (synchronous): walk every target and mark any that is
+          // already at or above the fold as .in-view. Do this BEFORE adding
+          // the gating class, so when the gating CSS takes effect those
+          // elements are already exempt from being hidden.
+          var deferred = [];
+          for (var i = 0; i < targets.length; i++) {
+            var el = targets[i];
+            var rect = el.getBoundingClientRect();
+            // "In viewport or above" - anything visible on first paint, or
+            // already scrolled past (which we still want shown immediately).
+            if (rect.top < viewportH * 1.05) {
+              el.classList.add('in-view');
+            } else {
+              deferred.push(el);
+            }
+          }
+
+          // Phase 2: now safe to enable the gating class. Hidden elements
+          // are only the ones scrolled below the fold, which is what the
+          // observer is for.
+          root.classList.add('js-reveal-active');
+
+          // Phase 3: observer for the rest
+          if (deferred.length) {
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in-view');
+                  io.unobserve(entry.target);
+                }
+              });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+            deferred.forEach(function (el) { io.observe(el); });
+
+            // Safety net: after 1.5s, force any still-hidden element visible.
+            setTimeout(function () {
+              deferred.forEach(function (el) {
+                if (!el.classList.contains('in-view')) el.classList.add('in-view');
+              });
+            }, 1500);
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setup, { once: true });
+        } else {
+          setup();
+        }
+
+        // bfcache restore (mobile back/forward): force everything visible.
+        // The new-page setup() above never ran in this case - the previous
+        // page was restored from cache. So we have to defensively mark
+        // every reveal element as visible.
+        window.addEventListener('pageshow', function (e) {
+          if (e.persisted) {
+            document.querySelectorAll('[data-reveal], [data-reveal-stagger]').forEach(function (el) {
+              el.classList.add('in-view');
+            });
+            document.querySelectorAll('.reveal').forEach(function (el) {
+              el.style.opacity = '1';
+              el.style.transform = 'none';
+            });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

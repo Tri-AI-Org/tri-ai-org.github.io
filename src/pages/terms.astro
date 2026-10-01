@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+
+const lastUpdated = 'February 2026';
+const contactEmail = 'hello@tri-ai.org';
+---
+
+<Base
+  title="Terms of Use - TRI AI"
+  description="The terms governing your use of the TRI AI website and services."
+>
+  <article class="legal">
+    <div class="container legal-inner">
+      <header class="legal-head">
+        <p class="eyebrow mono">Legal</p>
+        <h1 class="legal-title">Terms of Use</h1>
+        <p class="legal-updated mono">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="legal-body">
+        <p>
+          These terms govern your use of the TRI AI website (tri-ai.org) and the services offered through it. By using our site, you agree to these terms. If you do not agree, please do not use the site.
+        </p>
+
+        <h2>About TRI AI</h2>
+        <p>
+          TRI AI (Artificial Intelligence Teaching, Research and Innovation for Africa Ltd/Gte) is a non-governmental organisation based in Lagos, Nigeria, working on AI education, research, and innovation across Africa.
+        </p>
+
+        <h2>Use of our content</h2>
+        <p>
+          Much of our work — datasets, research, curricula, and code — is released openly, often under licences such as Creative Commons or open-source software licences. Where a specific licence applies to a resource, that licence governs your use of it. Please check the licence attached to each resource.
+        </p>
+        <p>
+          The TRI AI name, logo, wordmark, and brand identity are our property and may not be used to imply endorsement or affiliation without our written permission.
+        </p>
+
+        <h2>Programmes and applications</h2>
+        <p>
+          Applying to a programme does not guarantee acceptance. Admission decisions are at our discretion and based on the criteria published for each programme. We may change programme details, schedules, or partners where circumstances require.
+        </p>
+
+        <h2>Donations</h2>
+        <p>
+          Donations are processed by Paystack. Donations are voluntary and, unless otherwise stated, non-refundable. If you believe a donation was made in error, contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a> and we will consider the circumstances. Tax-deductibility of donations depends on your jurisdiction; we make no representation about deductibility.
+        </p>
+
+        <h2>Third-party links</h2>
+        <p>
+          Our site links to external sites — partner organisations, publication repositories, code hosts, and payment providers. We are not responsible for the content or practices of these third-party sites.
+        </p>
+
+        <h2>Disclaimer</h2>
+        <p>
+          Our site and its content are provided "as is". While we work to keep information accurate and current, we make no warranties about completeness or accuracy. Educational content is provided for learning purposes and does not constitute professional advice.
+        </p>
+
+        <h2>Limitation of liability</h2>
+        <p>
+          To the fullest extent permitted by law, TRI AI is not liable for any indirect or consequential loss arising from your use of our site or services.
+        </p>
+
+        <h2>Changes to these terms</h2>
+        <p>
+          We may update these terms from time to time. The "last updated" date above reflects the most recent change. Continued use of the site after changes constitutes acceptance of the updated terms.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about these terms can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        </p>
+
+        <div class="legal-placeholder mono">
+          Before publishing: confirm the registered company details, your donation refund stance, and have this reviewed by someone with legal knowledge for your jurisdiction.
+        </div>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .legal-inner { max-width: 760px; }
+  .legal-head { padding-block: clamp(40px, 6vw, 72px) 32px; }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .legal-title {
+    font-size: var(--t-display-l);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .legal-updated { color: var(--ink-faint); font-size: var(--t-mono-sm); letter-spacing: 0.1em; }
+  .legal-body { padding-bottom: clamp(56px, 8vw, 96px); }
+  .legal-body p { font-size: 16px; line-height: 1.7; color: var(--ink-mid); margin-bottom: 18px; }
+  .legal-body h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 40px 0 14px;
+    letter-spacing: -0.01em;
+  }
+  .legal-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+  }
+  .legal-body a:hover { color: var(--gold-deep); }
+  [data-theme='dark'] .legal-body a:hover { color: var(--gold); }
+  .legal-placeholder {
+    margin-top: 40px;
+    padding: 16px 18px;
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    font-size: var(--t-mono-sm);
+    line-height: 1.6;
+    color: var(--ink-mid);
+  }
+</style>

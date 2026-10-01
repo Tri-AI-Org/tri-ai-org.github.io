@@ -1,0 +1,344 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Newsletter from '../../../components/Newsletter.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const programmes = await getCollection('programmes');
+  // This page renders research-division programmes (the "initiatives").
+  // Teaching programmes are served by /programmes/[slug].
+  return programmes
+    .filter(p => p.data.division === 'research')
+    .map(p => ({
+      params: { slug: p.id },
+      props: { programme: p },
+    }));
+}
+
+const { programme } = Astro.props;
+const { Content, headings } = await render(programme);
+const d = programme.data;
+
+// Build the fact strip — only include facts that exist
+const facts = [];
+if (d.cohortInfo) facts.push({ label: 'Cohort', value: d.cohortInfo });
+if (d.cadence) facts.push({ label: 'Cadence', value: d.cadence });
+if (d.partner) facts.push({ label: 'In partnership with', value: d.partner });
+if (d.location) facts.push({ label: 'Location', value: d.location });
+facts.push({ label: 'Status', value: d.status, capitalize: true });
+---
+
+<Base title={`${d.title} - TRI AI`} description={d.tagline}>
+  <article class="prog-detail">
+    <!-- Slim hero: breadcrumb, title, tagline, actions only -->
+    <header class={`prog-hd prog-hd-${d.division}`}>
+      <div class="container">
+        <p class="prog-hd-bread">
+          <a href="/research">Research</a>
+          <span aria-hidden="true">·</span>
+          <span class="prog-hd-div">{d.division}</span>
+        </p>
+        <h1 class="prog-hd-title">{d.title}</h1>
+        <p class="prog-hd-tag">{d.tagline}</p>
+
+        {(d.applyUrl || d.websiteUrl || d.githubUrl) && (
+          <div class="prog-hd-actions">
+            {d.applyUrl && (
+              <a href={d.applyUrl} class="btn btn-primary btn-arrow">Apply</a>
+            )}
+            {d.websiteUrl && (
+              <a href={d.websiteUrl} target="_blank" rel="noopener" class="btn btn-ghost btn-arrow">Visit site</a>
+            )}
+            {d.githubUrl && (
+              <a href={d.githubUrl} target="_blank" rel="noopener" class="btn btn-ghost btn-arrow">GitHub</a>
+            )}
+          </div>
+        )}
+      </div>
+    </header>
+
+    {/* Cover + fact strip — both inside the tinted bleed, visually attached */}
+    <div class={`prog-cover-bleed prog-cover-bleed-${d.division}`}>
+      <div class="container prog-cover-wrap">
+        {d.cover && (
+          <figure class="prog-cover-fig">
+            <img src={d.cover} alt="" class="prog-cover-img" />
+            <span class={`prog-cover-fade prog-cover-fade-${d.division}`} aria-hidden="true"></span>
+          </figure>
+        )}
+
+        {facts.length > 0 && (
+          <dl class="prog-facts">
+            {facts.map(f => (
+              <div class="prog-fact">
+                <dt class="mono-faint">{f.label}</dt>
+                <dd style={f.capitalize ? 'text-transform:capitalize' : ''}>{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </div>
+    </div>
+
+    <!-- Body content with sticky TOC sidebar -->
+    <section class="section prog-body-sec">
+      <div class="container prog-body-grid">
+        <aside class="prog-side">
+          {headings && headings.length > 0 ? (
+            <nav class="prog-toc" aria-label="On this page">
+              <p class="mono-faint prog-toc-label">On this page</p>
+              <ul>
+                {headings
+                  .filter(h => h.depth === 2 || h.depth === 3)
+                  .map(h => (
+                    <li class={`prog-toc-d-${h.depth}`}>
+                      <a href={`#${h.slug}`}>{h.text}</a>
+                    </li>
+                  ))}
+              </ul>
+            </nav>
+          ) : (
+            <div class="prog-side-fallback">
+              <p class="mono-faint">About</p>
+              <p class="prog-side-text">{d.description}</p>
+            </div>
+          )}
+        </aside>
+        <div class="prog-prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <Newsletter />
+</Base>
+
+<style is:global>
+  .prog-prose {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+  }
+  .prog-prose h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 40px 0 14px;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 80px;
+  }
+  .prog-prose h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 28px 0 10px;
+    scroll-margin-top: 80px;
+  }
+  .prog-prose p { margin-bottom: 18px; }
+  .prog-prose ul, .prog-prose ol { padding-left: 22px; margin-bottom: 18px; }
+  .prog-prose li { margin-bottom: 6px; }
+  .prog-prose a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+  .prog-prose a:hover {
+    text-decoration-color: var(--gold);
+    color: var(--gold-deep);
+  }
+  [data-theme='dark'] .prog-prose a:hover { color: var(--gold); }
+  .prog-prose blockquote {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--ink);
+    margin: 24px 0;
+  }
+  .prog-prose img {
+    border-radius: 10px;
+    margin: 28px 0;
+  }
+  .prog-prose code {
+    background: var(--bg-soft);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+</style>
+
+<style>
+  /* ─── Hero: slim. Only breadcrumb, title, tagline, actions. ─── */
+  .prog-hd {
+    padding-block: clamp(40px, 5vw, 64px) clamp(28px, 3vw, 40px);
+  }
+  .prog-hd-teaching { background: var(--teaching-light); }
+  .prog-hd-research { background: var(--research-light); }
+  .prog-hd-innovation { background: var(--innovation-light); }
+
+  .prog-hd-bread {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: var(--t-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .prog-hd-bread a { color: var(--ink-mid); }
+  .prog-hd-bread a:hover { color: var(--ink); }
+  .prog-hd-div { color: var(--ink); }
+
+  .prog-hd-title {
+    font-size: var(--t-display-l);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 18ch;
+    margin-bottom: 14px;
+  }
+  .prog-hd-tag {
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.55;
+    color: var(--ink-mid);
+    max-width: 56ch;
+    margin-bottom: 24px;
+  }
+
+  .prog-hd-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* ─── Cover band: tinted bleed continues the header. ─── */
+  .prog-cover-bleed {
+    padding-bottom: clamp(36px, 4.5vw, 56px);
+    position: relative;
+  }
+  .prog-cover-bleed-teaching { background: var(--teaching-light); }
+  .prog-cover-bleed-research { background: var(--research-light); }
+  .prog-cover-bleed-innovation { background: var(--innovation-light); }
+
+  .prog-cover-wrap { margin-top: 0; }
+
+  .prog-cover-fig {
+    position: relative;
+    margin: 0 0 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px -18px rgba(20, 20, 20, 0.18);
+  }
+  [data-theme='dark'] .prog-cover-fig {
+    box-shadow: 0 12px 36px -18px rgba(0, 0, 0, 0.6);
+  }
+  .prog-cover-img {
+    width: 100%;
+    aspect-ratio: 16/7;
+    object-fit: cover;
+    display: block;
+  }
+  .prog-cover-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 22%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .prog-cover-fade-teaching {
+    background: linear-gradient(to bottom, var(--teaching-light), transparent);
+  }
+  .prog-cover-fade-research {
+    background: linear-gradient(to bottom, var(--research-light), transparent);
+  }
+  .prog-cover-fade-innovation {
+    background: linear-gradient(to bottom, var(--innovation-light), transparent);
+  }
+
+  /* ─── Fact strip: image's caption. Horizontal, mono, label→value columns. ─── */
+  .prog-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px clamp(24px, 3vw, 48px);
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  }
+  .prog-fact dt {
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .prog-fact dd {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* ─── Body grid with TOC sidebar ─── */
+  .prog-body-sec { padding-top: clamp(48px, 6vw, 80px); }
+  .prog-body-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .prog-side {
+    position: sticky;
+    top: 96px;
+  }
+  .prog-toc-label {
+    margin-bottom: 14px;
+  }
+  .prog-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid var(--line);
+  }
+  .prog-toc li {
+    padding-left: 14px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .prog-toc-d-3 { padding-left: 28px !important; }
+  .prog-toc a {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .prog-toc a:hover { color: var(--teaching); }
+
+  .prog-side-fallback .mono-faint { margin-bottom: 12px; }
+  .prog-side-text {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+  }
+
+  @media (max-width: 920px) {
+    .prog-body-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .prog-side {
+      position: static;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+</style>

@@ -1,0 +1,328 @@
+---
+import Base from '../layouts/Base.astro';
+import FeaturedFeed from '../components/FeaturedFeed.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Newsletter from '../components/Newsletter.astro';
+import NowPanel from '../components/NowPanel.astro';
+import HeroImpact from '../components/HeroImpact.astro';
+import HeroThreads from '../components/HeroThreads.astro';
+import DivisionPanel from '../components/DivisionPanel.astro';
+import DivisionsIntro from '../components/DivisionsIntro.astro';
+import CohortMarquee from '../components/CohortMarquee.astro';
+import { getCollection } from 'astro:content';
+
+const programmes = (await getCollection('programmes'))
+  .filter(p => p.data.status === 'active')
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 2);
+---
+
+<Base
+  title="TRI AI - Teaching, Research, Innovation in AI for Africa"
+  description="TRI AI is a non-governmental organisation building African AI communities that enable learning, research, and the development of AI solutions - published in the open."
+>
+  <!-- Hero - split-grid: headline + impact stats -->
+  <section class="hero">
+    <HeroThreads />
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <p class="hero-eyebrow mono reveal reveal-1">
+          Teaching <span class="he-sep">·</span>
+          Research <span class="he-sep">·</span>
+          Innovation
+        </p>
+
+        <h1 class="hero-h reveal reveal-2">
+          AI for Africa,<br/>
+          <span class="hero-h-accent">built in the open.</span>
+        </h1>
+
+        <p class="hero-lede reveal reveal-3">
+          TRI AI is a non-governmental organisation democratising artificial intelligence by building African AI communities that enable learning, research, and the development of AI solutions for local and global impact.
+        </p>
+
+        <div class="hero-actions reveal reveal-4">
+          <a href="/programmes" class="btn btn-primary btn-arrow">Explore programmes</a>
+          <a href="/research" class="btn btn-ghost btn-arrow">Our research</a>
+        </div>
+      </div>
+
+      <div class="hero-now reveal reveal-5">
+        <HeroImpact />
+      </div>
+    </div>
+
+    <!-- Division stripe - architectural footer to the hero -->
+    <div class="hero-stripe" aria-hidden="true">
+      <span class="hs hs-t"></span>
+      <span class="hs hs-r"></span>
+      <span class="hs hs-i"></span>
+    </div>
+  </section>
+
+  <!-- How the work fits together - explains divisions before deep panels -->
+  <DivisionsIntro />
+
+  <!-- Three divisions - full panels each -->
+  <DivisionPanel
+    number="01"
+    division="teaching"
+    title="Building the next generation of"
+    titleAccent="African AI practitioners."
+    statement="Cohort 10 of TRI AI Saturdays is open in partnership with Google DeepMind. Watch parties run during conference seasons. The colloquium series brings working researchers into community conversations."
+    ctaLabel="Explore Teaching"
+    ctaHref="/programmes"
+    featuredImage="/uploads/placeholders/teaching.jpg"
+    featuredImageAlt="Inside a TRI AI Saturdays cohort session"
+    featuredCaption="Inside the cohorts · Lagos"
+    featuredHref="/programmes"
+  />
+
+  <CohortMarquee />
+
+  <DivisionPanel
+    number="02"
+    division="research"
+    title="African questions,"
+    titleAccent="global answers."
+    statement="The Sauti Project is developing African accented dataset and models. ChowNet is mapping Nigerian foods at dataset scale. And more research ... work in the open."
+    ctaLabel="Explore Research"
+    ctaHref="/research"
+    featuredImage="/uploads/placeholders/research.jpg"
+    featuredImageAlt="Researcher at work - Sauti and ChowNet"
+    featuredCaption="African focused · open research"
+    featuredHref="/research"
+  />
+
+  <DivisionPanel
+    number="03"
+    division="innovation"
+    title="Turning research"
+    titleAccent="into things that ship."
+    statement="The first products are in development - applied tools and spinouts emerging from our research and teaching work. First launches are expected in late 2026."
+    ctaLabel="Get notified"
+    ctaHref="/innovation"
+    emptyState="Sign up below to hear when the first products launch."
+  />
+
+  <!-- What's happening now - moved from hero, given its own section -->
+  <section class="section section-lg now-section">
+    <div class="container">
+      <div data-reveal>
+        <SectionHeader
+          eyebrow="Latest"
+          title="What's happening now."
+        />
+      </div>
+      <div data-reveal class="now-section-body">
+        <NowPanel />
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider-rule" />
+
+  <!-- Recent / featured feed -->
+  <section class="section section-lg">
+    <div class="container">
+      <div data-reveal>
+        <SectionHeader
+          eyebrow="Recent"
+          title="Publications & updates."
+        />
+      </div>
+      <div data-reveal>
+        <FeaturedFeed />
+      </div>
+      <div class="see-all">
+        <a href="/research/publications" class="btn btn-ghost btn-arrow">All publications</a>
+      </div>
+    </div>
+  </section>
+
+  <Newsletter />
+</Base>
+
+<style>
+  /* ---------- Hero - split grid ---------- */
+  .hero {
+    position: relative;
+    padding-block: clamp(64px, 9vw, 120px) 0;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(40px, 5vw, 80px);
+    align-items: stretch;
+    padding-bottom: clamp(56px, 7vw, 96px);
+  }
+
+  .hero-main { display: flex; flex-direction: column; }
+
+  .hero-eyebrow {
+    font-size: var(--t-mono);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 22px;
+  }
+  .hero-eyebrow .he-sep {
+    margin: 0 4px;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .hero-h {
+    font-size: var(--t-display-xl);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 13ch;
+    margin-bottom: 22px;
+  }
+  .hero-h-accent {
+    display: inline-block;
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 600;
+    /* One tier smaller than the primary line */
+    font-size: 0.78em;
+    line-height: 1.1;
+    margin-top: 6px;
+  }
+
+  .hero-lede {
+    font-size: clamp(15.5px, 1.3vw, 18px);
+    line-height: 1.6;
+    color: var(--ink-mid);
+    max-width: 46ch;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero-now { min-width: 0; }
+
+  /* Division stripe - architectural footer */
+  .hero-stripe {
+    display: flex;
+    height: 6px;
+    width: 100%;
+  }
+  .hs { flex: 1; }
+  .hs-t { background: var(--teaching); }
+  .hs-r { background: var(--research); }
+  .hs-i { background: var(--innovation); }
+  [data-theme='dark'] .hs-r { background: var(--research-text); }
+
+  @media (max-width: 880px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .hero-lede { max-width: 60ch; }
+  }
+
+  /* ---------- Section size variant ---------- */
+  .section-lg {
+    padding-block: clamp(72px, 9vw, 128px);
+  }
+
+  /* ---------- Programmes ---------- */
+  .prog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .prog-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-elev);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.25s var(--ease-quick), transform 0.25s var(--ease-quick), box-shadow 0.25s var(--ease-quick);
+  }
+  .prog-card:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px -12px rgba(20, 20, 20, 0.08);
+  }
+  [data-theme='dark'] .prog-card:hover {
+    box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.6);
+  }
+  .prog-cover {
+    aspect-ratio: 16/9;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg-soft);
+  }
+  .prog-body { padding: 24px 26px 28px; }
+  .prog-body .tag { margin-bottom: 14px; }
+  .prog-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .prog-tag {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    margin-bottom: 18px;
+  }
+  .prog-link {
+    font-size: 12px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  .prog-card:hover .prog-link { color: var(--gold-deep); }
+  [data-theme='dark'] .prog-card:hover .prog-link { color: var(--gold); }
+
+  .see-all {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ---------- Impact ---------- */
+  .impact { background: var(--bg-soft); }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 16px;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    max-width: 22ch;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 820px) {
+    .prog-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

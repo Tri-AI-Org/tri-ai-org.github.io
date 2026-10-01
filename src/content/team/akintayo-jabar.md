@@ -1,0 +1,12 @@
+---
+name: Akintayo Jabar
+role: Head of MEL
+affiliation: TRI AI
+photo: /uploads/tayo.png
+linkedin: https://www.linkedin.com/in/tayo-jabar/
+division: parent
+group: leadership
+order: 7
+---
+
+Board member contributing to TRI AI's governance and strategic direction across the teaching, research, and innovation portfolios.

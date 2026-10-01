@@ -1,0 +1,263 @@
+---
+import Base from '../../layouts/Base.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events', ({ data }) => !data.draft);
+  return events.map(e => ({
+    params: { slug: e.id },
+    props: { event: e },
+  }));
+}
+
+const { event } = Astro.props;
+const { Content } = await render(event);
+const d = event.data;
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const fmtRange = (start: Date, end?: Date) => {
+  if (!end) return fmt(start);
+  return `${start.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })} - ${fmt(end)}`;
+};
+
+const kindLabel: Record<string, string> = {
+  workshop: 'Workshop',
+  conference: 'Conference',
+  meetup: 'Meetup',
+  talk: 'Talk',
+  hackathon: 'Hackathon',
+  graduation: 'Graduation',
+};
+---
+
+<Base title={`${d.title} - TRI AI`} description={d.excerpt}>
+  <article class="evd">
+    <!-- Breadcrumb + title band -->
+    <header class="evd-head">
+      <div class="container">
+        <p class="evd-bread">
+          <a href="/events">Events</a>
+          <span aria-hidden="true">·</span>
+          <span>{kindLabel[d.kind]}</span>
+        </p>
+        <h1 class="evd-title">{d.title}</h1>
+        <p class="evd-tag">{d.excerpt}</p>
+
+        <dl class="evd-facts">
+          <div class="evd-fact">
+            <dt class="mono-faint">Date</dt>
+            <dd>{fmtRange(d.date, d.endDate)}</dd>
+          </div>
+          <div class="evd-fact">
+            <dt class="mono-faint">Location</dt>
+            <dd>{d.location}</dd>
+          </div>
+          {d.partner && (
+            <div class="evd-fact">
+              <dt class="mono-faint">With</dt>
+              <dd>{d.partner}</dd>
+            </div>
+          )}
+          {d.externalUrl && (
+            <div class="evd-fact">
+              <dt class="mono-faint">Link</dt>
+              <dd><a href={d.externalUrl} target="_blank" rel="noopener" class="evd-ext">Event page ↗</a></dd>
+            </div>
+          )}
+        </dl>
+      </div>
+    </header>
+
+    <!-- Cover -->
+    <div class="container evd-cover-wrap">
+      <figure class="evd-cover">
+        <img src={d.cover} alt={d.title} />
+      </figure>
+    </div>
+
+    <!-- Write-up -->
+    <section class="section evd-body-sec">
+      <div class="container evd-body">
+        <Content />
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    {d.gallery.length > 0 && (
+      <section class="section evd-gallery-sec">
+        <div class="container">
+          <h2 class="evd-gallery-h mono">From the day</h2>
+          <div class="evd-gallery">
+            {d.gallery.map(img => (
+              <figure class="evd-gallery-item">
+                <img src={img.src} alt={img.caption ?? d.title} loading="lazy" />
+                {img.caption && <figcaption>{img.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <div class="container evd-back">
+      <a href="/events" class="mono evd-back-link">← All events</a>
+    </div>
+  </article>
+
+  <Newsletter />
+</Base>
+
+<style>
+  .evd-head { padding-block: clamp(40px, 5vw, 64px) clamp(24px, 3vw, 36px); }
+  .evd-bread {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: var(--t-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .evd-bread a { color: var(--ink-mid); }
+  .evd-bread a:hover { color: var(--ink); }
+  .evd-title {
+    font-size: var(--t-display-l);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 20ch;
+    margin-bottom: 14px;
+  }
+  .evd-tag {
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.55;
+    color: var(--ink-mid);
+    max-width: 60ch;
+    margin-bottom: 28px;
+  }
+  .evd-facts {
+    display: flex;
+    gap: clamp(24px, 4vw, 56px);
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .evd-fact dt {
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .evd-fact dd {
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+    margin: 0;
+  }
+  .evd-ext { color: var(--gold-deep); text-decoration: none; }
+  [data-theme='dark'] .evd-ext { color: var(--gold); }
+
+  .evd-cover-wrap { margin-bottom: clamp(32px, 5vw, 56px); }
+  .evd-cover {
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/8;
+    box-shadow: 0 12px 36px -18px rgba(20, 20, 20, 0.18);
+  }
+  [data-theme='dark'] .evd-cover { box-shadow: 0 12px 36px -18px rgba(0, 0, 0, 0.6); }
+  .evd-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .evd-body-sec { padding-block: 0 clamp(40px, 5vw, 64px); }
+  .evd-body {
+    max-width: 720px;
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+  }
+  .evd-body :global(h2) {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 36px 0 14px;
+  }
+  .evd-body :global(h3) {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 28px 0 10px;
+  }
+  .evd-body :global(p) { margin-bottom: 18px; }
+  .evd-body :global(ul), .evd-body :global(ol) { padding-left: 22px; margin-bottom: 18px; }
+  .evd-body :global(li) { margin-bottom: 6px; }
+  .evd-body :global(a) {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+  }
+  .evd-body :global(a:hover) { color: var(--gold-deep); }
+  [data-theme='dark'] .evd-body :global(a:hover) { color: var(--gold); }
+  .evd-body :global(img) { border-radius: 10px; margin: 28px 0; max-width: 100%; }
+  .evd-body :global(blockquote) {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--ink);
+    margin: 24px 0;
+  }
+
+  /* Gallery */
+  .evd-gallery-sec { padding-block: clamp(32px, 4vw, 48px); border-top: 1px solid var(--line); }
+  .evd-gallery-h {
+    font-size: var(--t-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  [data-theme='dark'] .evd-gallery-h { color: var(--gold); }
+  .evd-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .evd-gallery-item {
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-soft);
+  }
+  .evd-gallery-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--ease);
+  }
+  .evd-gallery-item:hover img { transform: scale(1.04); }
+  .evd-gallery-item figcaption {
+    font-size: 13px;
+    color: var(--ink-mid);
+    padding: 10px 14px;
+    line-height: 1.45;
+  }
+
+  .evd-back { padding-block: 24px clamp(32px, 5vw, 56px); }
+  .evd-back-link {
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+  }
+  .evd-back-link:hover { color: var(--gold-deep); }
+  [data-theme='dark'] .evd-back-link:hover { color: var(--gold); }
+</style>

@@ -1,0 +1,139 @@
+---
+/**
+ * DivisionsIntro - a quiet, non-interactive paragraph-style introduction
+ * to the three divisions. Sits between the hero and the first deep
+ * DivisionPanel below. Its job is purely orientation: tell the visitor
+ * what Teaching/Research/Innovation mean before they meet them in
+ * depth. No clicks, no CTAs - that work is happening in the panels
+ * below.
+ */
+---
+
+<section class="dvi" aria-labelledby="dvi-heading">
+  <div class="container">
+    <div class="dvi-grid" data-reveal>
+      <div class="dvi-head">
+        <p class="mono dvi-eyebrow">How the work fits together</p>
+        <h2 class="dvi-title" id="dvi-heading">
+          The organisation is organised in <span class="dvi-em">three divisions.</span>
+        </h2>
+      </div>
+
+      <div class="dvi-body">
+        <ul class="dvi-list">
+          <li class="dvi-row">
+            <span class="dvi-marker dvi-marker-teaching" aria-hidden="true"></span>
+            <p class="dvi-text">
+              <strong class="dvi-name dvi-name-teaching">Teaching</strong>
+              <span class="dvi-sep" aria-hidden="true">-</span>
+              building the people. Structured cohorts and a community that learns together.
+            </p>
+          </li>
+          <li class="dvi-row">
+            <span class="dvi-marker dvi-marker-research" aria-hidden="true"></span>
+            <p class="dvi-text">
+              <strong class="dvi-name dvi-name-research">Research</strong>
+              <span class="dvi-sep" aria-hidden="true">-</span>
+              building the knowledge. Open datasets, models, and benchmarks the field is missing for African contexts.
+            </p>
+          </li>
+          <li class="dvi-row">
+            <span class="dvi-marker dvi-marker-innovation" aria-hidden="true"></span>
+            <p class="dvi-text">
+              <strong class="dvi-name dvi-name-innovation">Innovation</strong>
+              <span class="dvi-sep" aria-hidden="true">-</span>
+              shipping the work. Turning what's been learned and researched into products that work in the world.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dvi {
+    padding-block: clamp(56px, 7vw, 88px);
+    border-bottom: 1px solid var(--line);
+  }
+  .dvi-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: clamp(40px, 6vw, 88px);
+    align-items: flex-start;
+  }
+  .dvi-eyebrow {
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+  }
+  [data-theme='dark'] .dvi-eyebrow { color: var(--gold); }
+  .dvi-title {
+    font-size: var(--t-display-m);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 16ch;
+  }
+  .dvi-em {
+    display: inline-block;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.78em;
+    color: var(--gold-deep);
+    margin-top: 4px;
+  }
+  [data-theme='dark'] .dvi-em { color: var(--gold); }
+
+  .dvi-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .dvi-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-block: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .dvi-row:first-child { padding-top: 0; }
+  .dvi-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .dvi-marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 9px;
+  }
+  .dvi-marker-teaching { background: var(--teaching); }
+  .dvi-marker-research { background: var(--research-text); }
+  .dvi-marker-innovation { background: var(--innovation); }
+
+  .dvi-text {
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+  .dvi-name {
+    font-weight: 700;
+  }
+  .dvi-name-teaching { color: var(--teaching); }
+  .dvi-name-research { color: var(--ink); }
+  [data-theme='dark'] .dvi-name-research { color: var(--research-text); }
+  .dvi-name-innovation { color: var(--innovation); }
+  .dvi-sep {
+    color: var(--ink-faint);
+    margin-inline: 8px;
+  }
+
+  @media (max-width: 880px) {
+    .dvi-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .dvi-title { max-width: none; }
+  }
+</style>

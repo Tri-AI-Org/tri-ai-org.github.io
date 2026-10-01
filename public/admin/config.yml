@@ -1,0 +1,349 @@
+backend:
+  name: git-gateway
+  branch: development
+
+# Editor previews use the live site
+site_url: https://tri-ai.org
+display_url: https://tri-ai.org
+logo_url: /favicon.svg
+
+# Where uploaded media is stored
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+# Open editorial workflow → drafts go through PR review on GitHub
+publish_mode: editorial_workflow
+
+# Brand the CMS
+locale: en
+
+collections:
+  # ─────────── Publications ───────────
+  - name: publications
+    label: Publications
+    label_singular: Publication
+    folder: src/content/publications
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    summary: '{{title}} - {{year}}'
+    sortable_fields: [date, title]
+    view_filters:
+      - label: Research
+        field: division
+        pattern: research
+      - label: Teaching
+        field: division
+        pattern: teaching
+      - label: Drafts
+        field: draft
+        pattern: 'true'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: false }
+      - { label: Authors, name: authors, widget: list, default: ['Author Name'] }
+      - { label: Venue, name: venue, widget: string, required: false, hint: 'e.g. ICLR 2026, NeurIPS, arXiv' }
+      - label: Division
+        name: division
+        widget: select
+        options: [research, teaching, innovation]
+        default: research
+      - { label: Project, name: project, widget: string, required: false, hint: 'e.g. Sauti Project' }
+      - label: "How this relates to TRI AI"
+        name: attribution
+        widget: select
+        default: tri-affiliated
+        hint: "TRI AI initiative = work led by TRI AI (flagship). TRI AI author = a TRI AI member co-authored, but the work happened elsewhere. Community = adjacent work we're listing without claiming. If unsure, choose 'TRI AI author' — it's the honest default."
+        options:
+          - { label: "TRI AI initiative (we led this)", value: "tri-led" }
+          - { label: "TRI AI author (someone here co-authored)", value: "tri-affiliated" }
+          - { label: "Community publication (we're amplifying it)", value: "community" }
+      - { label: Abstract, name: abstract, widget: text }
+      - { label: 'PDF URL', name: pdfUrl, widget: string, required: false }
+      - { label: 'External URL', name: externalUrl, widget: string, required: false }
+      - { label: 'Dataset URL', name: datasetUrl, widget: string, required: false, hint: 'e.g. Zenodo DOI for the dataset' }
+      - { label: 'Code URL', name: codeUrl, widget: string, required: false, hint: 'e.g. GitHub repo' }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown, required: false, hint: 'Optional extended content beyond the abstract.' }
+
+  # ─────────── Programmes ───────────
+  - name: programmes
+    label: Programmes
+    label_singular: Programme
+    folder: src/content/programmes
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    summary: '{{title}} - {{division}} / {{kind}}'
+    sortable_fields: [order, title]
+    view_filters:
+      - { label: Teaching, field: division, pattern: teaching }
+      - { label: Research, field: division, pattern: research }
+      - { label: Innovation, field: division, pattern: innovation }
+      - { label: Cohorts, field: kind, pattern: cohort }
+      - { label: Watch parties, field: kind, pattern: watch-party }
+      - { label: Colloquium, field: kind, pattern: colloquium }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Division
+        name: division
+        widget: select
+        options: [teaching, research, innovation]
+      - label: Kind
+        name: kind
+        widget: select
+        options:
+          - { label: 'Cohort programme (multi-week)', value: cohort }
+          - { label: 'Course (partner-delivered)', value: course }
+          - { label: 'Watch party (group viewings)', value: watch-party }
+          - { label: 'Expert colloquium (talk series)', value: colloquium }
+          - { label: 'Research initiative', value: research-init }
+          - { label: 'Innovation lab', value: lab }
+        default: cohort
+        hint: 'What kind of programme this is. Determines where it shows up on the Teaching/Research landing pages.'
+      - { label: Tagline, name: tagline, widget: string, hint: 'One-line summary' }
+      - { label: Description, name: description, widget: text, hint: 'Sidebar paragraph for the detail page.' }
+      - label: Status
+        name: status
+        widget: select
+        options: [active, upcoming, archived]
+        default: active
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Location, name: location, widget: string, required: false, hint: 'e.g. Lagos, Nigeria' }
+      - { label: Cohort info, name: cohortInfo, widget: string, required: false, hint: 'e.g. Cohort 9 - Sept 2026' }
+      - { label: Cadence, name: cadence, widget: string, required: false, hint: 'e.g. Quarterly, Monthly, Weekly' }
+      - { label: Partner, name: partner, widget: string, required: false, hint: 'e.g. Google DeepMind (for courses)' }
+      - { label: Apply URL, name: applyUrl, widget: string, required: false }
+      - { label: GitHub URL, name: githubUrl, widget: string, required: false }
+      - { label: Website URL, name: websiteUrl, widget: string, required: false }
+      - { label: Order, name: order, widget: number, default: 0, value_type: int }
+      - { label: Body, name: body, widget: markdown, hint: 'Full programme detail content' }
+
+  # ─────────── Cohorts (archive) ───────────
+  - name: cohorts
+    label: Cohorts (archive)
+    label_singular: Cohort
+    folder: src/content/cohorts
+    create: true
+    delete: true
+    slug: 'cohort-{{number}}'
+    summary: 'Cohort {{number}} ({{year}})'
+    sortable_fields: [number, year]
+    fields:
+      - { label: Programme slug, name: programme, widget: string, default: 'tri-ai-saturdays', hint: 'Matches the programme file id, e.g. tri-ai-saturdays' }
+      - { label: Number, name: number, widget: number, value_type: int, hint: 'Cohort number, e.g. 9' }
+      - { label: Year, name: year, widget: number, value_type: int }
+      - { label: Title, name: title, widget: string, required: false, hint: 'Optional theme/name' }
+      - label: Status
+        name: status
+        widget: select
+        options: [completed, running, upcoming]
+        default: completed
+      - { label: Summary (1-3 sentences shown on archive page), name: summary, widget: text }
+      - { label: Cover image (cohort detail page hero), name: cover, widget: string, required: false, hint: 'Path or URL to a 21:9 hero image' }
+      - { label: Body, name: body, widget: markdown, required: false, hint: 'Full cohort writeup - curriculum, teams, capstones, etc.' }
+
+      # ─── Cohort details ───
+      - { label: Duration, name: duration, widget: string, required: false, hint: 'e.g. "16 weeks", "Community-led"' }
+      - { label: Format, name: format, widget: string, required: false, hint: 'e.g. "Flipped classroom", "In-person + online"' }
+      - { label: Start date, name: startDate, widget: string, required: false, hint: 'e.g. "Jul 26, 2025"' }
+      - { label: End date, name: endDate, widget: string, required: false }
+      - { label: Partner, name: partner, widget: string, required: false, hint: 'e.g. "Google DeepMind"' }
+      - { label: Learners (count), name: learners, widget: number, value_type: int, required: false }
+      - { label: Teams count, name: teamsCount, widget: number, value_type: int, required: false }
+
+      # ─── External links ───
+      - { label: GitHub repo, name: githubUrl, widget: string, required: false, hint: 'Dedicated cohort repo on github.com/AISaturdaysLagos' }
+      - { label: YouTube playlist, name: youtubePlaylist, widget: string, required: false }
+      - { label: Projects URL, name: projectsUrl, widget: string, required: false, hint: 'Where the team projects live' }
+      - { label: Blog URL, name: blogUrl, widget: string, required: false, hint: 'Medium writeup or similar' }
+      - { label: Photo URL, name: photoUrl, widget: string, required: false, hint: 'Cohort flyer or photo gallery link' }
+
+      # ─── Credits ───
+      - { label: Instructors, name: instructors, widget: list, required: false, hint: 'Class instructors - one name per item' }
+      - { label: Practical instructors, name: practicalInstructors, widget: list, required: false }
+      - { label: Mentors, name: mentors, widget: list, required: false }
+      - { label: Organising lead, name: organizingLead, widget: string, required: false }
+      - { label: Organising co-lead, name: organizingCoLead, widget: string, required: false }
+      - { label: Organising supports, name: organizingSupports, widget: list, required: false }
+
+  # ─────────── Courses ───────────
+  - name: courses
+    label: Courses
+    label_singular: Course
+    folder: src/content/courses
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Track, name: track, widget: string, hint: 'e.g. AI Foundations, Machine Learning' }
+      - { label: Partner, name: partner, widget: string, required: false, hint: 'e.g. Google DeepMind' }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Duration, name: duration, widget: string, required: false, hint: 'e.g. 8 weeks' }
+      - label: Level
+        name: level
+        widget: select
+        options: [beginner, intermediate, advanced]
+        default: beginner
+      - { label: Enrol URL, name: enrollUrl, widget: string, required: false }
+      - { label: Order, name: order, widget: number, default: 0, value_type: int }
+      - { label: Body, name: body, widget: markdown }
+
+  # ─────────── Team ───────────
+  - name: team
+    label: Team
+    label_singular: Team member
+    folder: src/content/team
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Affiliation, name: affiliation, widget: string, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
+      - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+      - { label: Twitter URL, name: twitter, widget: string, required: false }
+      - label: Division
+        name: division
+        widget: select
+        options: [parent, teaching, research, innovation]
+        default: parent
+      - label: Group
+        name: group
+        widget: select
+        options: [board, leadership, team]
+        default: team
+      - { label: Order, name: order, widget: number, default: 0, value_type: int }
+      - { label: Bio, name: body, widget: markdown, required: false }
+
+  # ─────────── Partners ───────────
+  - name: partners
+    label: Partners
+    label_singular: Partner
+    folder: src/content/partners
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Logo, name: logo, widget: image }
+      - { label: URL, name: url, widget: string, required: false }
+      - label: Tier
+        name: tier
+        widget: select
+        options: [lead, partner, supporter]
+        default: partner
+      - { label: Order, name: order, widget: number, default: 0, value_type: int }
+      - label: "Logo has white background?"
+        name: hasBackground
+        widget: boolean
+        default: false
+        hint: "Check this if the logo file has a built-in white/coloured background (most JPGs). Prevents the logo turning into a bright tile in dark mode. Leave unchecked for transparent PNG or SVG logos."
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # ─────────── News ───────────
+  - name: news
+    label: News & Updates
+    label_singular: Article
+    folder: src/content/news
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - label: Division
+        name: division
+        widget: select
+        options: [parent, teaching, research, innovation]
+        default: parent
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ─────────── Press ───────────
+  - name: press
+    label: Press & Mentions
+    label_singular: Press item
+    folder: src/content/press
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    summary: '{{outlet}} - {{title}}'
+    sortable_fields: [date, outlet, title]
+    view_filters:
+      - { label: Articles, field: kind, pattern: article }
+      - { label: Talks, field: kind, pattern: talk }
+      - { label: 'Paper citations', field: kind, pattern: paper-citation }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Outlet, name: outlet, widget: string, hint: 'e.g. Fast Company, NeurIPS, arXiv' }
+      - label: Kind
+        name: kind
+        widget: select
+        options: [article, talk, podcast, paper-citation, mention]
+        default: article
+      - { label: URL, name: url, widget: string, hint: 'Link to the article / talk / paper' }
+      - { label: Excerpt, name: excerpt, widget: text, required: false, hint: 'A short paragraph summarising the mention.' }
+      - label: Division
+        name: division
+        widget: select
+        options: [parent, teaching, research, innovation]
+        default: parent
+      - { label: Project, name: project, widget: string, required: false, hint: 'e.g. Sauti Project, ChowNet' }
+      - { label: Order, name: order, widget: number, default: 0, value_type: int }
+  # ─────────── Events ───────────
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: src/content/events
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    summary: '{{title}} - {{location}}'
+    sortable_fields: [date, title]
+    media_folder: /public/uploads/events
+    public_folder: /uploads/events
+    view_filters:
+      - { label: Workshops, field: kind, pattern: workshop }
+      - { label: Conferences, field: kind, pattern: conference }
+      - { label: Meetups, field: kind, pattern: meetup }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: End date, name: endDate, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, required: false, hint: 'Only for multi-day events. Leave blank for single-day.' }
+      - { label: Location, name: location, widget: string, hint: 'e.g. Lagos, Nigeria  ·  or  Kigali · Deep Learning Indaba' }
+      - label: Kind
+        name: kind
+        widget: select
+        options: [workshop, conference, meetup, talk, hackathon, graduation]
+        default: workshop
+      - label: Division
+        name: division
+        widget: select
+        options: [parent, teaching, research, innovation]
+        default: parent
+      - { label: Excerpt, name: excerpt, widget: text, hint: 'One-line summary shown on the events grid.' }
+      - { label: Cover image, name: cover, widget: image, hint: 'Main image for the card and the top of the event page.' }
+      - label: Photo gallery
+        name: gallery
+        widget: list
+        required: false
+        label_singular: Photo
+        summary: '{{fields.caption}}'
+        hint: 'Add a handful of the best photos. Each can have an optional caption.'
+        fields:
+          - { label: Photo, name: src, widget: image }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Partner / co-host, name: partner, widget: string, required: false }
+      - { label: External link, name: externalUrl, widget: string, required: false, hint: 'Event page, recording, or write-up elsewhere.' }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Write-up, name: body, widget: markdown, hint: 'What happened at the event.' }

@@ -1,0 +1,508 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import { getCollection } from 'astro:content';
+
+const teaching = (await getCollection('programmes'))
+  .filter(p => p.data.division === 'teaching')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const cohorts = teaching.filter(p => p.data.kind === 'cohort');
+const watchParties = teaching.filter(p => p.data.kind === 'watch-party');
+const colloquia = teaching.filter(p => p.data.kind === 'colloquium');
+
+const courses = (await getCollection('courses'))
+  .sort((a, b) => a.data.order - b.data.order);
+
+const cohortArchive = (await getCollection('cohorts'))
+  .sort((a, b) => b.data.number - a.data.number);
+
+// ─── Dynamic section roster ─────────────────────────────────────────
+// Each potential section declares its identity and whether it has any
+// content right now. The page renders only sections with content, and
+// the numbering, hero nav, and "what's on" list below all derive from
+// this single source of truth. Delete every entry of a kind through the
+// CMS and the section, its hero nav link, and its mention in the lede
+// will all disappear together — no code edit needed. Add a new entry
+// later and everything reappears, renumbered correctly.
+const sectionRoster = [
+  { id: 'cohorts',       label: 'Cohorts',           hasContent: cohorts.length > 0 },
+  { id: 'courses',       label: 'Courses',           hasContent: courses.length > 0 },
+  { id: 'watch-parties', label: 'Watch parties',     hasContent: watchParties.length > 0 },
+  { id: 'colloquium',    label: 'Expert colloquium', hasContent: colloquia.length > 0 },
+];
+
+// Format helper: pad single-digit section numbers to two digits.
+const num = (n: number) => String(n).padStart(2, '0');
+
+// Filter to only sections with content, then assign sequential numbers.
+const sections = sectionRoster
+  .filter(s => s.hasContent)
+  .map((s, i) => ({ ...s, number: num(i + 1) }));
+
+// Quick lookup so each rendered section can grab its number.
+const numberFor = (id: string) =>
+  sections.find(s => s.id === id)?.number ?? '';
+---
+
+<Base
+  title="Programmes - TRI AI Teaching"
+  description="TRI AI Teaching runs cohort programmes, partner-delivered courses, watch parties, and an expert colloquium series. Everything we run is free to join."
+>
+  <section class="hero-pg">
+    <div class="container">
+      <div class="accent-bar accent-teaching"></div>
+      <p class="mono" style="color: var(--teaching)">TRI AI Teaching</p>
+      <h1 class="display hero-pg-h">
+        Building the next generation of
+        <span class="hero-pg-em">African AI practitioners.</span>
+      </h1>
+      <p class="lede">
+        Teaching is the largest of TRI AI's three divisions. Here's what's running right now.
+      </p>
+      <nav class="hero-pg-index mono" aria-label="Section index">
+        {sections.map(s => (
+          <a href={`#${s.id}`}><span class="hero-pg-num">{s.number}</span> {s.label}</a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  {cohorts.length > 0 && (
+    <>
+      <hr class="divider-rule" />
+      <section class="section" id="cohorts">
+      <div class="container">
+        <div data-reveal>
+          <SectionHeader
+            num={numberFor("cohorts")}
+            eyebrow="Cohorts"
+            title="Multi-week, structured."
+            description="Long-running programmes that take learners through a structured curriculum end to end."
+          />
+        </div>
+        <div class="prog-list" data-reveal-stagger>
+          {cohorts.map(p => (
+            <a href={`/programmes/${p.id}`} class={`prog-row ${p.data.cover ? 'has-cover' : ''}`}>
+              {p.data.cover && (
+                <div class="prog-row-cover">
+                  <img src={p.data.cover} alt="" loading="lazy" />
+                </div>
+              )}
+              <div class="prog-row-body">
+                <div class="accent-bar accent-teaching"></div>
+                <div class="prog-row-meta">
+                  <span class="tag tag-teaching">Cohort programme</span>
+                  {p.data.location && <span class="prog-row-loc mono">{p.data.location}</span>}
+                  {p.data.cohortInfo && <span class="prog-row-loc mono">{p.data.cohortInfo}</span>}
+                </div>
+                <h2 class="prog-row-title">{p.data.title}</h2>
+                <p class="prog-row-desc">{p.data.tagline}</p>
+                <span class="prog-row-cta">Explore <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {cohortArchive.length > 0 && (
+          <div class="archive-cta" data-reveal>
+            <p class="archive-line mono">
+              <span class="archive-num">{cohortArchive.length}+</span>
+              cohorts run since {Math.min(...cohortArchive.map(c => c.data.year))}
+            </p>
+            <div class="archive-links">
+              <a
+                href={`/programmes/tri-ai-saturdays/cohorts/${cohortArchive[0].data.number}`}
+                class="archive-link archive-link-current"
+              >
+                Current cohort: C{String(cohortArchive[0].data.number).padStart(2, '0')} <span aria-hidden="true">→</span>
+              </a>
+              <a href="/programmes/tri-ai-saturdays/cohorts" class="archive-link">
+                All cohorts <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+    </>
+  )}
+
+  {courses.length > 0 && (
+    <>
+      <hr class="divider-rule" />
+      <section class="section" id="courses">
+      <div class="container">
+        <div data-reveal>
+          <SectionHeader
+            num={numberFor("courses")}
+            eyebrow="Courses"
+            title="Partner-delivered curricula."
+            description="Foundational and advanced courses delivered with global partners - free for accepted learners."
+          />
+        </div>
+        <div class="course-grid" data-reveal-stagger>
+          {courses.map(c => (
+            <a href={`/courses/${c.id}`} class="course-card">
+              <div class="course-meta">
+                <span class="tag tag-teaching">{c.data.track}</span>
+                {c.data.partner && <span class="course-partner mono">w/ {c.data.partner}</span>}
+              </div>
+              <h3 class="course-title">{c.data.title}</h3>
+              <p class="course-summary">{c.data.summary}</p>
+              {c.data.duration && <p class="course-duration mono">{c.data.duration} · {c.data.level}</p>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+    </>
+  )}
+
+  {watchParties.length > 0 && (
+    <>
+      <hr class="divider-rule" />
+      <section class="section" id="watch-parties">
+      <div class="container">
+        <div data-reveal>
+          <SectionHeader
+            num={numberFor("watch-parties")}
+            eyebrow="Watch parties"
+            title="Talks, watched together."
+            description="Recurring group viewings of major AI talks and conference proceedings - followed by community discussion."
+          />
+        </div>
+        <div class="prog-list" data-reveal-stagger>
+          {watchParties.map(p => (
+            <a href={`/programmes/${p.id}`} class={`prog-row ${p.data.cover ? 'has-cover' : ''}`}>
+              {p.data.cover && (
+                <div class="prog-row-cover">
+                  <img src={p.data.cover} alt="" loading="lazy" />
+                </div>
+              )}
+              <div class="prog-row-body">
+                <div class="accent-bar accent-teaching"></div>
+                <div class="prog-row-meta">
+                  <span class="tag tag-teaching">Watch parties</span>
+                  {p.data.cadence && <span class="prog-row-loc mono">{p.data.cadence}</span>}
+                  {p.data.location && <span class="prog-row-loc mono">{p.data.location}</span>}
+                </div>
+                <h2 class="prog-row-title">{p.data.title}</h2>
+                <p class="prog-row-desc">{p.data.tagline}</p>
+                <span class="prog-row-cta">Read more <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+    </>
+  )}
+
+  {colloquia.length > 0 && (
+    <>
+      <hr class="divider-rule" />
+      <section class="section" id="colloquium">
+      <div class="container">
+        <div data-reveal>
+          <SectionHeader
+            num={numberFor("colloquium")}
+            eyebrow="Expert colloquium"
+            title="An invited speaker series."
+            description="Practising AI researchers and engineers presenting their work to the TRI AI community."
+          />
+        </div>
+        <div class="prog-list" data-reveal-stagger>
+          {colloquia.map(p => (
+            <a href={`/programmes/${p.id}`} class={`prog-row ${p.data.cover ? 'has-cover' : ''}`}>
+              {p.data.cover && (
+                <div class="prog-row-cover">
+                  <img src={p.data.cover} alt="" loading="lazy" />
+                </div>
+              )}
+              <div class="prog-row-body">
+                <div class="accent-bar accent-teaching"></div>
+                <div class="prog-row-meta">
+                  <span class="tag tag-teaching">Colloquium</span>
+                  {p.data.cadence && <span class="prog-row-loc mono">{p.data.cadence}</span>}
+                  {p.data.location && <span class="prog-row-loc mono">{p.data.location}</span>}
+                </div>
+                <h2 class="prog-row-title">{p.data.title}</h2>
+                <p class="prog-row-desc">{p.data.tagline}</p>
+                <span class="prog-row-cta">Read more <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+    </>
+  )}
+
+  {teaching.length === 0 && courses.length === 0 && (
+    <section class="section"><div class="container">
+      <p class="empty">Teaching programmes will appear here. Add them via the CMS at /admin.</p>
+    </div></section>
+  )}
+
+  <Newsletter />
+</Base>
+
+<style>
+  .hero-pg { padding-block: clamp(64px, 8vw, 112px); }
+  .hero-pg .accent-bar { margin-bottom: 16px; }
+  .hero-pg .mono { margin-bottom: 16px; }
+  .hero-pg-h {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+  .hero-pg-em {
+    display: inline-block;
+    color: var(--teaching);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.78em;
+    line-height: 1.15;
+    margin-top: 4px;
+  }
+
+  .hero-pg-index {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 32px;
+  }
+  .hero-pg-index a {
+    font-size: var(--t-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+  .hero-pg-index a:hover { color: var(--teaching); }
+  .hero-pg-num {
+    color: var(--teaching);
+    font-weight: 700;
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  .prog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .prog-row {
+    display: block;
+    padding: 32px 32px 28px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: border-color 0.25s var(--ease-quick), transform 0.25s var(--ease-quick), box-shadow 0.25s var(--ease-quick);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+  }
+  .prog-row:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -12px rgba(20, 20, 20, 0.08);
+  }
+  [data-theme='dark'] .prog-row:hover {
+    box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Two-column layout when there's a cover image */
+  .prog-row.has-cover {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    padding: 0;
+    align-items: stretch;
+  }
+  .prog-row-cover {
+    overflow: hidden;
+    background: var(--bg-soft);
+  }
+  .prog-row-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s var(--ease);
+  }
+  .prog-row.has-cover:hover .prog-row-cover img {
+    transform: scale(1.04);
+  }
+  .prog-row.has-cover .prog-row-body {
+    padding: 32px 32px 28px;
+  }
+
+  @media (max-width: 720px) {
+    .prog-row.has-cover {
+      grid-template-columns: 1fr;
+    }
+    .prog-row-cover { aspect-ratio: 16/9; }
+    .prog-row-cover img { height: 100%; }
+  }
+
+  .prog-row-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .prog-row-loc {
+    color: var(--ink-faint);
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .prog-row-title {
+    font-size: clamp(22px, 2.4vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .prog-row-desc {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    margin-bottom: 18px;
+    max-width: 80ch;
+  }
+  .prog-row-cta {
+    font-size: 12px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  .prog-row:hover .prog-row-cta { color: var(--teaching); }
+
+  .archive-cta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 32px;
+    padding: 18px 24px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .archive-line {
+    color: var(--ink-mid);
+    font-size: var(--t-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .archive-num {
+    color: var(--teaching);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  .archive-link {
+    font-family: var(--font-mono);
+    font-size: var(--t-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 3px;
+    transition: border-color 0.2s;
+  }
+  .archive-link:hover { border-bottom-color: var(--teaching); }
+  .archive-links {
+    display: flex;
+    gap: 28px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .archive-link-current {
+    color: var(--teaching);
+    border-bottom-color: var(--teaching);
+    font-weight: 700;
+  }
+
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .course-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 24px 26px;
+    background: var(--bg-elev);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.25s var(--ease-quick), transform 0.25s var(--ease-quick);
+    display: flex;
+    flex-direction: column;
+  }
+  .course-card:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+  }
+  .course-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .course-partner {
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .course-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .course-summary {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  .course-duration {
+    font-size: var(--t-mono-sm);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--ink-faint);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+  }
+
+  @media (max-width: 880px) {
+    .course-grid { grid-template-columns: 1fr; }
+  }
+</style>
