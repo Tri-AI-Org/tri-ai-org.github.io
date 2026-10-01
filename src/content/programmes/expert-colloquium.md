@@ -69,7 +69,6 @@ Career journeys, community building, research culture, mentorship, and the exper
 
 * **Time:** TBD
 
-
 ## Past colloquia
 
 A selection of past sessions, with full recordings on the [AI Saturdays Lagos YouTube channel](https://www.youtube.com/@AISaturdaysLagos).
