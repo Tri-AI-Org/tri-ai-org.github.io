@@ -73,7 +73,7 @@ Mentor: Patrick Owor
 
 **Team Bangweulu: Rethinking How AI Processes African Languages**
 
-
+![](/uploads/morphologically-aware-superbpe.png)
 
 African languages present unique challenges for modern language models. Many have complex morphological structures, different writing systems, and linguistic characteristics that are not always well represented by the tools used to build today's AI systems. When standard tokenizers process African languages, words can be broken into unnecessarily small pieces, increasing the amount of text that models need to process and potentially affecting how efficiently they work.
 
