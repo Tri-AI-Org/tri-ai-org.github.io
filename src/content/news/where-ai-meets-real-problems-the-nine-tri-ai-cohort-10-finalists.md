@@ -5,23 +5,26 @@ division: teaching
 excerpt: "Where AI Meets Real Problems: The Nine TRI AI Cohort 10 Finalists"
 draft: false
 ---
-Where AI Meets Real Problems: The Nine TRI AI Cohort 10 Finalists 
-
 What happens when a community of AI learners moves beyond learning concepts and starts building solutions to problems that matter to them? TRI AI Cohort 10 put its learning into practice through nine ambitious capstone projects, exploring how Small Language Models (SLMs), natural language processing, and retrieval augmented generation can be used to tackle real-world challenges. 
-During the capstone phase, learners worked collaboratively in teams, bringing together their technical skills, creativity, research interests, and understanding of problems within their communities.
-With more than 60 teams actively competing, the cohort explored a wide range of ideas across nine distinct capstone tracks. Each track presented a different challenge, from detecting toxicity and understanding mental health sentiment to improving agricultural advice, legal information, medical guidance, and African language AI systems.
-After weeks of building, experimenting, testing, and refining their ideas, nine projects emerged as finalists.
+
+
 Here are the projects representing the nine capstone tracks.
-Team Kinyeti: Making Agricultural Knowledge Easier to Find 
+
+
+**Team Kinyeti: Making Agricultural Knowledge Easier to Find** 
+
 A farmer notices something is wrong with their maize. The leaves have holes, and the cobs are smaller than expected. They need an answer, but finding the right agricultural advice is not always straightforward. The information may already exist, buried somewhere among hundreds of agricultural advisory documents written for different crops, countries, and farming conditions. The challenge is knowing where to look and finding the information that is actually relevant.
 That is the problem Team Kinyeti set out to address with Agricultural Extension RAG, a system designed to make agricultural knowledge easier to search and retrieve. The system takes a farming question written in plain language and searches through a collection of 695 agricultural advisory texts covering 13 crops across 21 African countries, returning the five documents it considers most relevant.
 To improve how those documents are found and ranked, the team experimented with both semantic and keyword based retrieval. They fine tuned a BGE bi encoder for semantic matching and used a BGE cross encoder to rerank the results. Their final hybrid pipeline combined BM25 keyword search, dense retrieval, and reranking, achieving an nDCG@5 score of 0.93753 on the private leaderboard and placing the team third overall.
 The team also wanted users to see what happens behind the scenes. They built an interactive demonstration that allows users to compare different retrieval approaches and follow how documents move through the retrieval pipeline. Rather than simply presenting a list of results, the system provides a clearer view of how those documents were identified and ranked.
 At the same time, Kinyeti recognizes the limitations of the current prototype. The document collection is primarily in English and often uses technical agricultural language, so the system is not intended to replace agricultural extension officers or independently determine what a farmer should do. Instead, the project provides a foundation that could be expanded with more local language resources, broader agricultural data, and feedback from agricultural extension professionals.
-Explore the project: Kinyeti Link
+Explore the project: [Kinyeti Link](< https://overwatch886sociot--team-kinyeti-rag-ui.modal.run/>)
 Team: Israel Olawuyi Mobolaji · Harry Okah · Edike Jeremiah · Chisom Okafor
 Mentors: Oluwaseun Ajayi · Samuel Taiwo · Adnan Adetunji
-Team Atbara: Building AI for African Customer Complaints
+
+
+**Team Atbara: Building AI for African Customer Complaints**
+
 A customer reports a failed transfer in Nigerian Pidgin. Another describes a delivery problem in Kenyan Sheng. To a human customer service agent, the meaning may be clear from context. But for automated support systems trained primarily on standardized English, complaints expressed in local languages and dialects can be much harder to interpret accurately. 
 Team Atbara set out to address this challenge with their project, Intelligent Complaint Classification Using Localized Transformer Architectures. They developed a fine tuned DeBERTa v3 model designed to classify customer complaints into 10 operational categories while also assigning priority levels. The model was trained on 14,499 complaints, including anonymized reviews from users across Nigeria, Ghana, Kenya, and South Africa.
 The dataset represented a range of real world customer experiences, covering services and platforms such as Jumia, Shein, Kilimall, Takealot, Temu, Glovo, Bolt Food, and Checkers Sixty60. However, Atbara’s approach went beyond simply asking whether the model could classify a complaint correctly. The team also considered what should happen when the model is not confident in its prediction.
@@ -29,11 +32,13 @@ Using a confidence threshold, the system can identify uncertain cases and route 
 The project also considers the broader implications of deploying AI in customer support. Alongside the model, Atbara developed a data card, impact statement, and stakeholder engagement plan that examined issues such as language bias, automation bias, and the risks of incorrectly handling sensitive complaints.
 In the end, the project asks a question that extends beyond model accuracy: Can an AI system understand a complaint, and can it also recognize when a human should take over?
 For Team Atbara, building a useful customer support system means addressing both sides of that question.
-Explore the project: Atbara Github Link
+Explore the project: [Atbara Github Link](https://github.com/Elocodes/C10-team-atbara)
 
-Team: Justina Odoeze, Sheree Edmund, Nzube Ohalete, Faith Kasunga, Sheila Nalweyiso
+![](/uploads/screenshot-2026-09-30-200018.png "Team: Justina Odoeze, Sheree Edmund, Nzube Ohalete, Faith Kasunga, Sheila Nalweyiso")
 
-Team Bwindi: Bringing Climate Aware Pest Management Closer to Farmers 
+
+
+**Team Bwindi: Bringing Climate Aware Pest Management Closer to Farmers** 
 
 A farmer growing maize, rice, or sorghum may know that pests are affecting their crops, but finding reliable information about what to do next can be difficult. Advice on pest management and the effects of changing climate conditions is often scattered across research papers, agricultural extension manuals, government publications, and agro advisory platforms. Much of this information is also written for technical audiences rather than the farmers who need it most.
 Team Bwindi approached this challenge by building CrawLM, the Climate Responsive Agricultural Wizard Language Model, a lightweight small language model designed to provide accessible information about climate aware pest management for staple cereal crops across West Africa.
