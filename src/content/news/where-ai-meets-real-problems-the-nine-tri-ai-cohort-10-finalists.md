@@ -7,9 +7,7 @@ draft: false
 ---
 What happens when a community of AI learners moves beyond learning concepts and starts building solutions to problems that matter to them? TRI AI Cohort 10 put its learning into practice through nine ambitious capstone projects, exploring how Small Language Models (SLMs), natural language processing, and retrieval augmented generation can be used to tackle real-world challenges. 
 
-
 Here are the projects representing the nine capstone tracks.
-
 
 **Team Kinyeti: Making Agricultural Knowledge Easier to Find** 
 
@@ -21,7 +19,6 @@ At the same time, Kinyeti recognizes the limitations of the current prototype. T
 Explore the project: [Kinyeti Link](< https://overwatch886sociot--team-kinyeti-rag-ui.modal.run/>)
 Team: Israel Olawuyi Mobolaji · Harry Okah · Edike Jeremiah · Chisom Okafor
 Mentors: Oluwaseun Ajayi · Samuel Taiwo · Adnan Adetunji
-
 
 **Team Atbara: Building AI for African Customer Complaints**
 
@@ -36,31 +33,36 @@ Explore the project: [Atbara Github Link](https://github.com/Elocodes/C10-team-a
 
 ![](/uploads/screenshot-2026-09-30-200018.png "Team: Justina Odoeze, Sheree Edmund, Nzube Ohalete, Faith Kasunga, Sheila Nalweyiso")
 
-
-
 **Team Bwindi: Bringing Climate Aware Pest Management Closer to Farmers** 
 
+![](/uploads/crawlm-prototype-1-.png)
+
 A farmer growing maize, rice, or sorghum may know that pests are affecting their crops, but finding reliable information about what to do next can be difficult. Advice on pest management and the effects of changing climate conditions is often scattered across research papers, agricultural extension manuals, government publications, and agro advisory platforms. Much of this information is also written for technical audiences rather than the farmers who need it most.
-Team Bwindi approached this challenge by building CrawLM, the Climate Responsive Agricultural Wizard Language Model, a lightweight small language model designed to provide accessible information about climate aware pest management for staple cereal crops across West Africa.
-The team focused on maize, rice, and sorghum, developing a system that brings information from a range of agricultural and scientific resources into a more accessible format. Their data was sourced from regional and global repositories including FAO AGRIS, the CABI Plantwise Knowledge Bank, GBIF, and NASA, among others.
-Under the hood, CrawLM is built on Meta’s Llama 3.2 3B Instruct model and was fine tuned for the target agricultural domain using QLoRA. The model can respond to questions about pest management in growing and stored cereal crops, as well as questions about how climatic conditions can affect crop development.
-The team evaluated the model from both quantitative and qualitative perspectives. Its final validation loss was 2.0209, while additional evaluation focused on domain specific edge cases to examine how the model responds to agricultural questions that may require more nuanced understanding.
+
+
+Team Bwindi approached this challenge by building CrawLM, the Climate Responsive Agricultural Wizard Language Model, a lightweight small language model designed to provide accessible information about climate aware pest management for staple cereal crops across West Africa. The team focused on maize, rice, and sorghum, developing a system that brings information from a range of agricultural and scientific resources into a more accessible format. Their data was sourced from regional and global repositories including FAO AGRIS, the CABI Plantwise Knowledge Bank, GBIF, and NASA, among others.
+
+
+Under the hood, CrawLM is built on Meta’s Llama 3.2 3B Instruct model and was fine tuned for the target agricultural domain using QLoRA. The model can respond to questions about pest management in growing and stored cereal crops, as well as questions about how climatic conditions can affect crop development. The team evaluated the model from both quantitative and qualitative perspectives. Its final validation loss was 2.0209, while additional evaluation focused on domain specific edge cases to examine how the model responds to agricultural questions that may require more nuanced understanding.
+
+
 The result is a lightweight agricultural AI tool designed to put relevant information into a format that is easier to access and use. Rather than requiring farmers to navigate multiple technical repositories, CrawLM aims to bring a more concentrated source of climate and pest management knowledge into a single interface.
 The prototype is currently available through Hugging Face Spaces, where users can interact directly with the model.
-Explore the project: CrawLM Link
+Explore the project: [CrawLM Link](https://huggingface.co/spaces/zerothvictor/CrawLM-Playground)
 
-Team Binga: Preserving African Folktales Through AI 
+**Team Binga: Preserving African Folktales Through AI** 
+
+
 
 African folktales have traditionally been passed down through generations through oral storytelling. However, many culturally significant stories and the knowledge they carry remain underrepresented and difficult to access in digital spaces. Team Binga set out to explore how artificial intelligence could help preserve and improve access to these storytelling traditions.
-The team developed a domain specific Small Language Model focused on African folktales, using a curated dataset of stories to explore how lightweight AI could work with culturally specific content. Their project combined document retrieval with model fine tuning, allowing them to explore different ways of identifying and working with relevant folktales based on user prompts.
-Team Binga developed working notebook based prototypes covering data preparation, retrieval, fine tuning, inference, and evaluation. Beyond building the technology, the project also encouraged the team to consider important questions around the responsible use of AI for cultural knowledge, including cultural representation, authenticity, bias, copyright, and the role of communities in preserving and sharing their traditions.
-The project also delivered a strong result during the cohort challenge, with Team Binga finishing first on the Kaggle leaderboard. The team went on to present their work during Demo Day, giving them an opportunity to showcase their approach and discuss what they learned throughout the project.
-At its core, Team Binga's project goes beyond applying AI to a dataset. It explores how emerging technology can be used to make African stories more accessible while encouraging thoughtful conversations about how cultural knowledge is represented, preserved, and shared in digital spaces.
-Project repository: Binga Github Link
+
+
+The team developed a domain specific Small Language Model focused on African folktales, using a curated dataset of stories to explore how lightweight AI could work with culturally specific content. Their project combined document retrieval with model fine tuning, allowing them to explore different ways of identifying and working with relevant folktales based on user prompts. Beyond building the technology, the project also encouraged the team to consider important questions around the responsible use of AI for cultural knowledge, including cultural representation, authenticity, bias, copyright, and the role of communities in preserving and sharing their traditions.
+Project repository: [Binga Github Link](https://github.com/flexydave/C10-team-Binga)
 Team: David Attah , Bright Francis , Orangun Folaranmi
 Mentor: Patrick Owor
 
-Team Bangweulu: Rethinking How AI Processes African Languages
+**Team Bangweulu: Rethinking How AI Processes African Languages**
 
 African languages present unique challenges for modern language models. Many have complex morphological structures, different writing systems, and linguistic characteristics that are not always well represented by the tools used to build today's AI systems. When standard tokenizers process African languages, words can be broken into unnecessarily small pieces, increasing the amount of text that models need to process and potentially affecting how efficiently they work.
 Team Bangweulu set out to address this challenge by developing a morphologically aware SuperBPE tokenizer designed for more than 30 African languages. Their project focuses on an important part of AI infrastructure: how text is broken down into smaller units before it is processed by a language model.
