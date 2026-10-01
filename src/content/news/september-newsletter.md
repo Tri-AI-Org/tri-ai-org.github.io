@@ -70,6 +70,8 @@ Through the project, he learned by building and gained a deeper understanding of
 
 ### MEET THE BUILDERS
 
+
+
 After weeks of learning, experimenting, and building, nine teams made it to the Cohort 10 finals from more than 70 teams.
 
 The finalist teams have completed their projects, developing AI-powered solutions to problems across different industries.
