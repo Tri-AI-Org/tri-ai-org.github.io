@@ -1,7 +1,7 @@
 ---
 title: When AI Knowledge Moves Into Action | The Encoder, Issue 18
 date: 2026-10-01
-division: teaching
+division: parent
 excerpt: When AI Knowledge Moves Into Action | The Encoder, Issue 18
 cover: /uploads/1001204364.jpg
 draft: false
@@ -72,13 +72,7 @@ After weeks of learning, experimenting, and building, nine teams made it to the 
 
 The finalist teams have completed their projects, developing AI-powered solutions to problems across different industries.
 
-**Explore the projects → [View the Cohort 10 Finalists Projects](https://tri-ai.org/blog/where-ai-meets-real-problems-the-nine-tri-ai-cohort-10-finalists/)**
-
-The cohort’s work will also be showcased during **Demo Day on Saturday, 3 October 2026, from 11:00 AM to 1:00 PM WAT**.
-
-Whether you're part of the cohort or hearing about us for the first time, you can join the session online.
-
-**Join Demo Day → [Zoom Link](https://us06web.zoom.us/meeting/register/pcbF7sliTfmszw2vfWDl8g?_x_zm_rtaid=Id2-K4cLRiusj6vydiqH8g.1790712023058.e1e8a0c39080aa1f0bddea9b622afa20&_x_zm_rhtaid=279#/registration)**
+**Explore the projects: [View the Cohort 10 Finalists Projects](https://tri-ai.org/blog/where-ai-meets-real-problems-the-nine-tri-ai-cohort-10-finalists/)**
 
 ## 02 - INNOVATION
 
@@ -96,7 +90,7 @@ Hakimu is building a multilingual AI-powered legal search engine that brings Afr
 
 And it is already moving beyond a search tool. In April 2026, Hakimu signed an agreement with the East African Court of Justice to deploy its AI-powered case-law research technology, with training and support for judges and court staff.
 
-**Try Hakimu → [Website Link](https://hakimu.ai/about)**
+**Try Hakimu: [Website Link](https://hakimu.ai/about)**
 
 ### MAZAOHUB | Putting AI to Work on the Farm
 
@@ -106,7 +100,7 @@ MazaoHub uses AI, soil data and weather information to help farmers understand w
 
 It now reports more than 66,000 farmers and agronomists using the platform.
 
-**Learn more about MazaoHub → [Website Link](https://www.mazaohub.com/)**
+**Learn more about MazaoHub: [Website Link](https://www.mazaohub.com/)**
 
 ### AI DIAGNOSTICS | Listening for TB
 
@@ -116,7 +110,7 @@ AI Diagnostics is tackling this with Ostium, an AI-powered digital stethoscope t
 
 The device is designed for frontline health workers, making TB screening possible in places where X-ray equipment may not be available.
 
-**Learn more about AI Diagnostics → [Website Link](https://www.aidiagnostics.health/)**
+**Learn more about AI Diagnostics: [Website Link](https://www.aidiagnostics.health/)**
 
 ## 03 - WHAT'S HAPPENING IN AI
 
@@ -132,15 +126,15 @@ Nigeria has opened its National AI Innovation Challenge, inviting developers, un
 
 The model supports Yoruba, Hausa, Igbo, and Nigerian-accented English.
 
-**Read more → [N-ATLAS National AI Innovation Challenge](https://ncair.nitda.gov.ng/naic/)**
+**Read more: [N-ATLAS National AI Innovation Challenge](https://ncair.nitda.gov.ng/naic/)**
 
-### Rwanda — Responsible AI
+### Rwanda - Responsible AI
 
 Rwanda’s National AI Policy focuses on using AI to support economic growth while promoting responsible and inclusive adoption.
 
 Its policy framework covers areas including AI skills, data, infrastructure, innovation, and governance.
 
-**Read more →[ Rwanda National AI Policy](https://www.minict.gov.rw/ai-policy)**
+**Read more: [ Rwanda National AI Policy](https://www.minict.gov.rw/ai-policy)**
 
 ### What This Shows
 
@@ -162,7 +156,7 @@ The online course runs **26–30 October 2026**, with a hybrid capstone on **6 N
 
 **[APPLY HERE](https://docs.google.com/forms/d/1prTZj7gPldwzldzToOa_wvu2zCi8viwKsnGCpVUYi90/viewform?edit_requested=true)**
 
-### International Conference on Technology, Innovation & Youth — Abuja
+### International Conference on Technology, Innovation & Youth, Abuja
 
 Connect with professionals, researchers, and young people exploring technology, digital literacy, entrepreneurship, and youth innovation.
 
