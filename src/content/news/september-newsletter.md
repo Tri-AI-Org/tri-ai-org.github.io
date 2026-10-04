@@ -1,6 +1,6 @@
 ---
 title: When AI Knowledge Moves Into Action | The Encoder, Issue 18
-date: 2026-10-01
+date: 2026-10-04
 division: parent
 excerpt: When AI Knowledge Moves Into Action | The Encoder, Issue 18
 cover: /uploads/1001204364.jpg
