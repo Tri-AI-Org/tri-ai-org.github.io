@@ -45,7 +45,7 @@ State-of-the-art ML and AI research: large language models, diffusion models, RL
 
 African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.
 
-### Abstract: Session details and abstract will be announced soon.
+### Abstract: Coming soon.
 
 * **Date:** To be announced
 
