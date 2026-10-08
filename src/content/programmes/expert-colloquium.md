@@ -33,9 +33,13 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
 
 State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.
 
-* **Date:** TBD
+### Abstract
 
-* **Time:** TBD
+"Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with ReAct, to agents acting in live environments. The models changed; our evaluation habits mostly didn’t. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust."
+
+* **Date:** Saturday 24th October
+
+* **Time:** 10AM - 12noon WAT
 
 ### Theme B: AI for Africa
 
