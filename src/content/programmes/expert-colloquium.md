@@ -33,17 +33,23 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
 
 State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.
 
-* **Date:** TBD
+### Abstract
 
-* **Time:** TBD
+"Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn’t. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust."
+
+* **Date:** Saturday, 24 October 2026
+
+* **Time:** 10:00 AM – 12:00 PM WAT
 
 ### Theme B: AI for Africa
 
 African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.
 
-* **Date:** TBD
+### Abstract: Session details and abstract will be announced soon.
 
-* **Time:** TBD
+* **Date:** To be announced
+
+* **Time:** To be announced
 
 ### Theme C: AI in industry and product
 
@@ -68,7 +74,6 @@ Career journeys, community building, research culture, mentorship, and the exper
 * **Date:** TBD
 
 * **Time:** TBD
-
 
 ## Past colloquia
 
