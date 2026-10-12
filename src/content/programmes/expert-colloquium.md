@@ -38,24 +38,24 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
       <h3>Theme A: Research frontiers</h3>
       State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.<br><br>
       <b>Abstract:</b> Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn't. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust.<br><br>
-      <br><b>Date:</b> Saturday, 24 October 2026<br>
-      <br><b>Time:</b> 10:00 AM – 12:00 PM WAT
+      <b>Date:</b> Saturday, 24 October 2026<br><br>
+      <b>Time:</b> 10:00 AM – 12:00 PM WAT
     </td>
   </tr>
-  <tr><td colspan="2"><hr></td></tr>
+  <tr><td colspan="2"><br><hr><br></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://dev-tri-ai.netlify.app/uploads/theme-b.jpg"" alt="AI for Africa" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-b.jpg" alt="AI for Africa" width="120">
     </td>
     <td valign="top">
       <h3>Theme B: AI for Africa</h3>
       African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.<br><br>
-      <b>Abstract:</b> <i>Coming soon.</i><br>
-      <br><b>Date:</b> To be announced<br>
-      <br><b>Time:</b> To be announced
+      <b>Abstract:</b> <i>Coming soon.</i><br><br>
+      <b>Date:</b> To be announced<br><br>
+      <b>Time:</b> To be announced
     </td>
   </tr>
-  <tr><td colspan="2"><hr></td></tr>
+  <tr><td colspan="2"><br><hr><br></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
       <img src="https://dev-tri-ai.netlify.app/uploads/theme-c.jpg" alt="AI in industry and product" width="120">
@@ -63,25 +63,25 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
     <td valign="top">
       <h3>Theme C: AI in industry and product</h3>
       Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.<br><br>
-      <b>Abstract:</b> <i>Coming soon.</i><br>
-      <br><b>Date:</b> To be announced<br>
-      <br><b>Time:</b> To be announced
+      <b>Abstract:</b> <i>Coming soon.</i><br><br>
+      <b>Date:</b> To be announced<br><br>
+      <b>Time:</b> To be announced
     </td>
   </tr>
-  <tr><td colspan="2"><hr></td></tr>
+  <tr><td colspan="2"><br><hr><br></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://dev-tri-ai.netlify.app/uploads/theme-d.jpg"" alt="Ethics, policy, and governance" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-d.jpg" alt="Ethics, policy, and governance" width="120">
     </td>
     <td valign="top">
       <h3>Theme D: Ethics, policy, and governance</h3>
       Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.<br><br>
-      <b>Abstract:</b> <i>Coming soon.</i><br>
-      <br><b>Date:</b> To be announced<br>
-      <br><b>Time:</b> To be announced
+      <b>Abstract:</b> <i>Coming soon.</i><br><br>
+      <b>Date:</b> To be announced<br><br>
+      <b>Time:</b> To be announced
     </td>
   </tr>
-  <tr><td colspan="2"><hr></td></tr>
+  <tr><td colspan="2"><br><hr><br></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
       <img src="https://dev-tri-ai.netlify.app/uploads/theme-e.jpg" alt="Inspiration and pathways" width="120">
@@ -89,9 +89,9 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
     <td valign="top">
       <h3>Theme E: Inspiration and pathways</h3>
       Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.<br><br>
-      <b>Abstract:</b> <i>Coming soon.</i><br>
-      <br><b>Date:</b> To be announced<br>
-     <br> <b>Time:</b> To be announced
+      <b>Abstract:</b> <i>Coming soon.</i><br><br>
+      <b>Date:</b> To be announced<br><br>
+      <b>Time:</b> To be announced
     </td>
   </tr>
 </table>
@@ -102,7 +102,10 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
 A selection of past sessions, with full recordings on the [AI Saturdays Lagos YouTube channel](https://www.youtube.com/@AISaturdaysLagos).
 
 * **Luis Serrano** (30 January 2021). Machine learning educator and author of *Grokking Machine Learning*. [Watch on YouTube](https://www.youtube.com/watch?v=WeZxNJRmyx4)
+
 * **Kọ́lá Túbọ̀sún** (20 March 2021). Linguist and writer working on Yorùbá language preservation and digital language tools. [Watch on YouTube](https://www.youtube.com/watch?v=v61yX2idMys)
+
 * **Julius Adebayo** (24 April 2021). *Interpretability.* Then a PhD candidate at MIT working on interpretability and algorithmic fairness; now at Guide Labs. [Watch on YouTube](https://www.youtube.com/watch?v=81EnhMIWlzI)
+
 * **Irene Lo** (22 May 2021). *Market design for social good: using math, algorithms, and economics to address social problems.* Professor of Management Science and Engineering at Stanford, with ongoing work on resource allocation in public housing and school assignment. [Watch on YouTube](https://www.youtube.com/watch?v=1siPyC2olz8)
 
