@@ -102,7 +102,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
       <h3>Theme A: Research frontiers</h3>
       State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.<br><br>
       <b>Abstract:</b> Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn't. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust.<br><br>
-      <b>Date:</b> Saturday, 24 October 2026<br>
+      <br><b>Date:</b> Saturday, 24 October 2026<br>
       <br><b>Time:</b> 10:00 AM – 12:00 PM WAT
     </td>
   </tr>
