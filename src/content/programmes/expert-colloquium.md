@@ -103,7 +103,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
       State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.<br><br>
       <b>Abstract:</b> Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn't. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust.<br><br>
       <b>Date:</b> Saturday, 24 October 2026<br>
-      <b>Time:</b> 10:00 AM – 12:00 PM WAT
+      <br><b>Time:</b> 10:00 AM – 12:00 PM WAT
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
@@ -115,8 +115,8 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
       <h3>Theme B: AI for Africa</h3>
       African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.<br><br>
       <b>Abstract:</b> <i>Coming soon.</i><br>
-      <b>Date:</b> To be announced<br>
-      <b>Time:</b> To be announced
+      <br><b>Date:</b> To be announced<br>
+      <br><b>Time:</b> To be announced
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
@@ -128,8 +128,8 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
       <h3>Theme C: AI in industry and product</h3>
       Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.<br><br>
       <b>Abstract:</b> <i>Coming soon.</i><br>
-      <b>Date:</b> To be announced<br>
-      <b>Time:</b> To be announced
+      <br><b>Date:</b> To be announced<br>
+      <br><b>Time:</b> To be announced
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
@@ -141,8 +141,8 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
       <h3>Theme D: Ethics, policy, and governance</h3>
       Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.<br><br>
       <b>Abstract:</b> <i>Coming soon.</i><br>
-      <b>Date:</b> To be announced<br>
-      <b>Time:</b> To be announced
+      <br><b>Date:</b> To be announced<br>
+      <br><b>Time:</b> To be announced
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
@@ -154,8 +154,8 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
       <h3>Theme E: Inspiration and pathways</h3>
       Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.<br><br>
       <b>Abstract:</b> <i>Coming soon.</i><br>
-      <b>Date:</b> To be announced<br>
-      <b>Time:</b> To be announced
+      <br><b>Date:</b> To be announced<br>
+     <br> <b>Time:</b> To be announced
     </td>
   </tr>
 </table>
