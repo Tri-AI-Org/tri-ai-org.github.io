@@ -99,3 +99,27 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
 | <img src="images/theme-c.png" alt="AI in industry and product" width="120"> | **Theme C: AI in industry and product**<br>Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced <hr> |
 | <img src="images/theme-d.png" alt="Ethics, policy, and governance" width="80"> | **Theme D: Ethics, policy, and governance**<br>Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced <hr> |
 | <img src="images/theme-e.png" alt="Inspiration and pathways" width="80"> | **Theme E: Inspiration and pathways**<br>Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced |
+
+
+<table>
+  <tr>
+    <td width="100"><img src="images/theme-a.png" alt="Research frontiers" width="80"></td>
+    <td>
+      <b>Theme A: Research frontiers</b><br>
+      State-of-the-art ML and AI research...<br><br>
+      <b>Date:</b> Saturday, 24 October 2026<br>
+      <b>Time:</b> 10:00 AM – 12:00 PM WAT
+    </td>
+  </tr>
+  <tr><td colspan="2"><hr></td></tr>
+  <tr>
+    <td width="100"><img src="images/theme-b.png" alt="AI for Africa" width="80"></td>
+    <td>
+      <b>Theme B: AI for Africa</b><br>
+      African NLP, speech and accent technology...<br><br>
+      <b>Date:</b> To be announced<br>
+      <b>Time:</b> To be announced
+    </td>
+  </tr>
+  <tr><td colspan="2"><hr></td></tr>
+</table>
