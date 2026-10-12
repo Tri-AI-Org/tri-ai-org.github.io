@@ -109,7 +109,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779277867/TRI%20AI/about1_ltfxu5.jpg" alt="AI for Africa" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-b.jpg"" alt="AI for Africa" width="120">
     </td>
     <td valign="top">
       <h3>Theme B: AI for Africa</h3>
@@ -122,7 +122,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="images/theme-c.png" alt="AI in industry and product" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-c.jpg" alt="AI in industry and product" width="120">
     </td>
     <td valign="top">
       <h3>Theme C: AI in industry and product</h3>
@@ -135,7 +135,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="images/theme-d.png" alt="Ethics, policy, and governance" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-d.jpg"" alt="Ethics, policy, and governance" width="120">
     </td>
     <td valign="top">
       <h3>Theme D: Ethics, policy, and governance</h3>
@@ -148,7 +148,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="images/theme-e.png" alt="Inspiration and pathways" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-e.jpg" alt="Inspiration and pathways" width="120">
     </td>
     <td valign="top">
       <h3>Theme E: Inspiration and pathways</h3>
