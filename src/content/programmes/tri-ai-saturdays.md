@@ -15,7 +15,7 @@ description: >-
   The programme was founded in Lagos in 2018 to address one specific gap: the shortage of accessible, structured AI education for engineers and curious learners in Nigeria. Since then, the community has grown beyond Lagos to include learners across the African continent.
 status: active
 cover: https://res.cloudinary.com/kenechi-dukor/image/upload/v1779493712/TRI%20AI/ai6_simj2o.png
-cohortInfo: Cohort 10 running now · applications for Cohort 11 announced via the newsletter
+cohortInfo: Applications for Cohort 11 announced via the newsletter
 cadence: 16-week cohorts, multiple per year
 partner: Google DeepMind (Cohort 10)
 applyUrl: https://tri-ai.org/programmes/tri-ai-saturdays/cohorts/10/
