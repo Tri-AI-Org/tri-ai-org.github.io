@@ -24,16 +24,14 @@ order: 1
 
 Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with ReAct, to agents acting in live environments. The models changed; our evaluation habits mostly didn’t. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust."
 
- **Bio:**  Ayomide Odumakinde is a Nigerian AI researcher at Cohere Labs, where his work sits at the intersection of multilingual natural language processing and large language model evaluation. His research has been published at top-tier venues including the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025), where he presented work on multilingual arbitration, a method for optimizing synthetic data generation across multiple language models to accelerate progress in multilingual settings.
+ **Bio:**  Ayomide Odumakinde is a Member of Technical Staff at Cohere, where he works on large language models, agentic AI systems, and AI infrastructure. His research interests span reinforcement learning for language models, long-context memory, efficient training and inference systems, and long-horizon agentic systems. Previously, he was a Research Scholar at Cohere For AI, where he worked on a distillation method for language model training called multilingual arbitrage. His research on multilingual arbitrage was incorporated into the development of Aya Expanse.
 
-That research, co-authored with colleagues at Cohere including Sara Hooker, addresses a critical limitation in how modern LLMs are built: the over-reliance on a single "oracle" teacher model to generate training data, which can lead to model collapse and the propagation of biases, which are problems especially severe in multilingual contexts where no single model excels across all languages. His work proposes using an ensemble of models, routing training samples to whichever model performs best for a given language, with measurable gains particularly for low-resource languages.
 
-More recently, Odumakinde has also contributed to research on agentic AI evaluation, investigating whether LLM-simulated users can reliably stand in for real human users in agent benchmarks, conducting user studies across the United States, India, Kenya, and Nigeria.
+His work bridges machine learning research and large-scale AI systems, focusing on instruction following, model evaluation, long-horizon reasoning, and the infrastructure required to train and deploy foundation models efficiently. He is particularly interested in building AI systems that can learn, reason, and operate over extended time horizons.
 
-Beyond research, Odumakinde has been a public voice on the real-world implications of AI in African contexts, including commentary on the risks of AI-generated deepfakes in the Nigerian electoral environment, bringing both technical depth and civic awareness to the conversation.
 
-Furthermore, He’s not a stranger to TRI AI as he’s given a lecture/talk before at AI Saturdays Lagos Research cohort hosted by the community in 2024 where he talked about reading research paper. He was able to practically explain the concept of reading deep and reading wide to the audience present at the talk.
-He represents an increasingly important profile in the African AI ecosystem: a homegrown researcher doing fundamental, frontier-level work at a globally recognized AI lab, with clear sight lines to problems that matter for the continent.
+His research has been published in the proceedings of ACL, and his current work focuses on long-horizon agentic training and evaluation, exploring how foundation models can effectively reason, plan, use tools, and manage memory over extended interactions. He continues to investigate the intersection of reinforcement learning, agentic AI, long-context reasoning, and scalable AI infrastructure.
+
 
 We'll replace the below image with Image of Ayomide
 
