@@ -92,34 +92,70 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
 
 ## Upcoming Themes
 
-| | |
-|---|---|
-| <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779276964/TRI%20AI/ed69f583-7cff-4ee4-9b38-910b285a4efd_1_gz3hib.png" alt="Research frontiers" width="120"> | **Theme A: Research frontiers**<br>State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.<br><br>**Abstract:** Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn't. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust.<br><br>**Date:** Saturday, 24 October 2026<br>**Time:** 10:00 AM – 12:00 PM WAT <br> <hr> | 
-| <br> <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779277867/TRI%20AI/about1_ltfxu5.jpg" alt="AI for Africa" width="120"> | **Theme B: AI for Africa**<br>African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced <hr> |
-| <img src="images/theme-c.png" alt="AI in industry and product" width="120"> | **Theme C: AI in industry and product**<br>Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced <hr> |
-| <img src="images/theme-d.png" alt="Ethics, policy, and governance" width="80"> | **Theme D: Ethics, policy, and governance**<br>Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced <hr> |
-| <img src="images/theme-e.png" alt="Inspiration and pathways" width="80"> | **Theme E: Inspiration and pathways**<br>Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.<br><br>**Abstract:** *Coming soon.*<br>**Date:** To be announced<br>**Time:** To be announced |
 
-
-<table>
+<table width="100%" cellpadding="16" cellspacing="0">
   <tr>
-    <td width="100"><img src="images/theme-a.png" alt="Research frontiers" width="80"></td>
-    <td>
-      <b>Theme A: Research frontiers</b><br>
-      State-of-the-art ML and AI research...<br><br>
+    <td width="160" valign="top" align="center">
+      <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779276964/TRI%20AI/ed69f583-7cff-4ee4-9b38-910b285a4efd_1_gz3hib.png" alt="Research frontiers" width="120">
+    </td>
+    <td valign="top">
+      <h3>Theme A: Research frontiers</h3>
+      State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.<br><br>
+      <b>Abstract:</b> Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn't. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust.<br><br>
       <b>Date:</b> Saturday, 24 October 2026<br>
       <b>Time:</b> 10:00 AM – 12:00 PM WAT
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
   <tr>
-    <td width="100"><img src="images/theme-b.png" alt="AI for Africa" width="80"></td>
-    <td>
-      <b>Theme B: AI for Africa</b><br>
-      African NLP, speech and accent technology...<br><br>
+    <td width="160" valign="top" align="center">
+      <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779277867/TRI%20AI/about1_ltfxu5.jpg" alt="AI for Africa" width="120">
+    </td>
+    <td valign="top">
+      <h3>Theme B: AI for Africa</h3>
+      African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.<br><br>
+      <b>Abstract:</b> <i>Coming soon.</i><br>
       <b>Date:</b> To be announced<br>
       <b>Time:</b> To be announced
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
+  <tr>
+    <td width="160" valign="top" align="center">
+      <img src="images/theme-c.png" alt="AI in industry and product" width="120">
+    </td>
+    <td valign="top">
+      <h3>Theme C: AI in industry and product</h3>
+      Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.<br><br>
+      <b>Abstract:</b> <i>Coming soon.</i><br>
+      <b>Date:</b> To be announced<br>
+      <b>Time:</b> To be announced
+    </td>
+  </tr>
+  <tr><td colspan="2"><hr></td></tr>
+  <tr>
+    <td width="160" valign="top" align="center">
+      <img src="images/theme-d.png" alt="Ethics, policy, and governance" width="120">
+    </td>
+    <td valign="top">
+      <h3>Theme D: Ethics, policy, and governance</h3>
+      Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.<br><br>
+      <b>Abstract:</b> <i>Coming soon.</i><br>
+      <b>Date:</b> To be announced<br>
+      <b>Time:</b> To be announced
+    </td>
+  </tr>
+  <tr><td colspan="2"><hr></td></tr>
+  <tr>
+    <td width="160" valign="top" align="center">
+      <img src="images/theme-e.png" alt="Inspiration and pathways" width="120">
+    </td>
+    <td valign="top">
+      <h3>Theme E: Inspiration and pathways</h3>
+      Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.<br><br>
+      <b>Abstract:</b> <i>Coming soon.</i><br>
+      <b>Date:</b> To be announced<br>
+      <b>Time:</b> To be announced
+    </td>
+  </tr>
 </table>
