@@ -35,6 +35,6 @@ Beyond research, Odumakinde has been a public voice on the real-world implicatio
 Furthermore, He’s not a stranger to TRI AI as he’s given a lecture/talk before at AI Saturdays Lagos Research cohort hosted by the community in 2024 where he talked about reading research paper. He was able to practically explain the concept of reading deep and reading wide to the audience present at the talk.
 He represents an increasingly important profile in the African AI ecosystem: a homegrown researcher doing fundamental, frontier-level work at a globally recognized AI lab, with clear sight lines to problems that matter for the continent.
 
-Image of Ayomide
+We'll replace the below image with Image of Ayomide
 
 ![A TRI AI Saturdays classroom session, with learners working through curriculum together](https://res.cloudinary.com/kenechi-dukor/image/upload/v1779462564/TRI%20AI/Frame_29_xceyvh.png)
