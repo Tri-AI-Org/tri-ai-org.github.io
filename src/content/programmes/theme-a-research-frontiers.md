@@ -37,4 +37,4 @@ He represents an increasingly important profile in the African AI ecosystem: a h
 
 Image of Ayomide
 
-![A TRI AI Saturdays classroom session, with learners working through curriculum together](/uploads/ayomide-odumakinde.jpg)
+![A TRI AI Saturdays classroom session, with learners working through curriculum together](https://res.cloudinary.com/kenechi-dukor/image/upload/v1779462564/TRI%20AI/Frame_29_xceyvh.png)
