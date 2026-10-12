@@ -14,17 +14,17 @@ order: 1
 ---
 ## Meet the Speaker:
 
-## Ayomide Odumakinde
+ **Ayomide Odumakinde** 
 
-** Current Role:**  AI Researcher, Cohere (Cohere Labs)
+ **Current Role:**  AI Researcher, Cohere (Cohere Labs)
 
-** Nationality:**  Nigerian
+ **Nationality:**  Nigerian
 
-## Abstract:
+### Abstract:
 
 Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with ReAct, to agents acting in live environments. The models changed; our evaluation habits mostly didn’t. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust."
 
-** Bio: ** Ayomide Odumakinde is a Nigerian AI researcher at Cohere Labs, where his work sits at the intersection of multilingual natural language processing and large language model evaluation. His research has been published at top-tier venues including the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025), where he presented work on multilingual arbitration, a method for optimizing synthetic data generation across multiple language models to accelerate progress in multilingual settings.
+ **Bio:**  Ayomide Odumakinde is a Nigerian AI researcher at Cohere Labs, where his work sits at the intersection of multilingual natural language processing and large language model evaluation. His research has been published at top-tier venues including the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025), where he presented work on multilingual arbitration, a method for optimizing synthetic data generation across multiple language models to accelerate progress in multilingual settings.
 
 That research, co-authored with colleagues at Cohere including Sara Hooker, addresses a critical limitation in how modern LLMs are built: the over-reliance on a single "oracle" teacher model to generate training data, which can lead to model collapse and the propagation of biases, which are problems especially severe in multilingual contexts where no single model excels across all languages. His work proposes using an ensemble of models, routing training samples to whichever model performs best for a given language, with measurable gains particularly for low-resource languages.
 
@@ -37,6 +37,4 @@ He represents an increasingly important profile in the African AI ecosystem: a h
 
 Image of Ayomide
 
-![A TRI AI Saturdays classroom session, with learners working through curriculum together](https://res.cloudinary.com/kenechi-dukor/image/upload/v1779462564/TRI%20AI/Frame_29_xceyvh.png)
-
-
+![A TRI AI Saturdays classroom session, with learners working through curriculum together](/uploads/ayomide-odumakinde.jpg)
