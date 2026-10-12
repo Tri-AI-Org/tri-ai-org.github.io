@@ -38,17 +38,15 @@ State-of-the-art ML and AI research: large language models, diffusion models, RL
 "Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn’t. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust."
 
 * **Date:** Saturday, 24 October 2026
-
 * **Time:** 10:00 AM – 12:00 PM WAT
 
 ### Theme B: AI for Africa
 
 African NLP, speech and accent technology, African image datasets, AI for healthcare and agriculture, climate AI, local language models, and building datasets for underrepresented languages. The most distinctive theme in the series.
 
-### Abstract: Coming soon.
+### Abstract: *Coming soon.*
 
 * **Date:** To be announced
-
 * **Time:** To be announced
 
 ### Theme C: AI in industry and product
@@ -56,7 +54,6 @@ African NLP, speech and accent technology, African image datasets, AI for health
 Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.
 
 * **Date:** TBD
-
 * **Time:** TBD
 
 ### Theme D: Ethics, policy, and governance
@@ -64,7 +61,6 @@ Building and deploying AI products: MLOps, model evaluation, responsible AI in p
 Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountability, AI safety, and privacy. Not optional, rather, essential to building AI that actually serves communities.
 
 * **Date:** TBD
-
 * **Time:** TBD
 
 ### Theme E: Inspiration and pathways
@@ -72,7 +68,6 @@ Bias and fairness, AI policy in Africa, data sovereignty, algorithmic accountabi
 Career journeys, community building, research culture, mentorship, and the experience of navigating the AI field as an African professional. Deliberately personal.
 
 * **Date:** TBD
-
 * **Time:** TBD
 
 ## Past colloquia
