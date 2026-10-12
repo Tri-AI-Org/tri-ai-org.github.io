@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://tri-ai.org',
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/verify') })],
   build: {
     inlineStylesheets: 'auto',
   },

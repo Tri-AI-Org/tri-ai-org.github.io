@@ -12,6 +12,13 @@
   to = "/admin/index.html"
   status = 200
 
+# Short address for the certificate QR codes. 200 = rewrite, so the short URL stays
+# in the browser and ?id=... is passed through to the page.
+[[redirects]]
+  from = "/verify"
+  to = "/programmes/tri-ai-saturdays/verify"
+  status = 200
+
 # Publications moved under Research
 [[redirects]]
   from = "/publications/*"
