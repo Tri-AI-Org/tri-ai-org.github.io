@@ -95,7 +95,7 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
     </td>
   </tr>
 </table>
-
+<tr><td colspan="2"><br><hr><br></td></tr>
 
 ## Past colloquia
 
