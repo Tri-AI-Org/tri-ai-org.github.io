@@ -1,0 +1,180 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+// Paste the Apps Script web app URL (ends in /exec) here.
+const VERIFY_API = 'https://script.google.com/macros/s/AKfycbxltp7kidWtvXbERQiORbvvF5DEKzg86blWMdXTzsMwv9RKcX2qOKCmRVR07jvg7Ki7/exec';
+---
+
+<Base
+  title="Verify a certificate - TRI AI Saturdays"
+  description="Check that a TRI AI Saturdays certificate is genuine."
+  noindex
+>
+  <article class="vf">
+    <nav class="vf-bread container" aria-label="Breadcrumb">
+      <a href="/programmes">Teaching</a>
+      <span aria-hidden="true">·</span>
+      <a href="/programmes/tri-ai-saturdays">TRI AI Saturdays</a>
+      <span aria-hidden="true">·</span>
+      <span class="tag tag-teaching">Verify</span>
+    </nav>
+
+    <header class="vf-head container">
+      <div class="accent-bar accent-teaching"></div>
+      <p class="mono" style="color: var(--teaching)">Certificate verification</p>
+      <h1 class="vf-title">
+        Verify a certificate.
+        <span class="vf-em">In seconds.</span>
+      </h1>
+      <p class="vf-lede">
+        Scan the QR code on a TRI AI Saturdays certificate, or type the certificate ID printed next to “SN”.
+      </p>
+
+      <form class="vf-form" id="vf-form" autocomplete="off" novalidate>
+        <label class="mono vf-label" for="vf-id">Certificate ID</label>
+        <div class="vf-row">
+          <input id="vf-id" name="id" type="text" inputmode="text" autocapitalize="characters"
+                 spellcheck="false" placeholder="C05/1/6272020/001" required />
+          <button type="submit" class="vf-btn">Check <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+
+      <div id="vf-out" class="vf-out" role="status" aria-live="polite" hidden></div>
+    </header>
+  </article>
+
+  <script is:inline define:vars={{ VERIFY_API }}>
+    (function () {
+      var form = document.getElementById('vf-form');
+      var input = document.getElementById('vf-id');
+      var out = document.getElementById('vf-out');
+      var seq = 0;
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function show(kind, html) {
+        out.hidden = false;
+        out.className = 'vf-out vf-' + kind;
+        out.innerHTML = html;
+      }
+      function row(label, value) {
+        return value ? '<div class="vf-fact"><dt class="mono">' + label + '</dt><dd>' + esc(value) + '</dd></div>' : '';
+      }
+
+      function render(r) {
+        if (r.error) {
+          return show('warn', '<p class="mono vf-kicker">Unavailable</p><h2>We couldn’t check right now.</h2>' +
+            '<p>Please try again in a moment, or contact us if it keeps happening.</p>');
+        }
+        if (!r.found) {
+          return show('bad', '<p class="mono vf-kicker">Not found</p><h2>No certificate matches that ID.</h2>' +
+            '<p>Check it for typos (every character counts). If it still fails, <a href="/contact">contact us</a>.</p>');
+        }
+        if (String(r.status).toLowerCase() !== 'valid') {
+          return show('warn', '<p class="mono vf-kicker">Not valid</p><h2>This certificate is no longer valid.</h2>' +
+            '<p>Please <a href="/contact">contact us</a> if you think this is a mistake.</p>');
+        }
+        var what = esc(r.programme) + (r.cohort ? ', ' + esc(r.cohort) + (r.year ? ' (' + esc(r.year) + ')' : '') : '');
+        show('ok', '<p class="mono vf-kicker"><span class="vf-tick" aria-hidden="true">✓</span> Verified</p>' +
+          '<h2 class="vf-name">' + esc(r.name) + '</h2>' +
+          '<p class="vf-statement">This person was verified to have completed the ' + what + '.</p>' +
+          '<dl class="vf-facts">' + row('Date completed', r.date) + row('Final project', r.project) +
+          row('Certificate ID', r.cert_id) + '</dl>');
+      }
+
+      function check(id) {
+        id = (id || '').trim();
+        if (!id) { out.hidden = true; return; }
+        var mine = ++seq;
+        show('wait', '<p class="mono vf-kicker">Checking…</p>');
+        var url = VERIFY_API + (VERIFY_API.indexOf('?') > -1 ? '&' : '?') + 'format=json&id=' + encodeURIComponent(id);
+        fetch(url)
+          .then(function (res) { return res.json(); })
+          .then(function (data) { if (mine === seq) render(data); })
+          .catch(function () { if (mine === seq) render({ error: true }); });
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var id = input.value.trim();
+        try { history.replaceState(null, '', location.pathname + (id ? '?id=' + encodeURIComponent(id) : '')); } catch (x) {}
+        check(id);
+      });
+
+      var start = new URLSearchParams(location.search).get('id');
+      if (start) { input.value = start; check(start); }
+    })();
+  </script>
+</Base>
+
+<style>
+  .vf-bread {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 32px; padding-bottom: 8px;
+    font-family: var(--font-mono); font-size: var(--t-mono);
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint);
+    flex-wrap: wrap;
+  }
+  .vf-bread a { color: var(--ink-mid); text-decoration: none; }
+  .vf-bread a:hover { color: var(--ink); }
+
+  .vf-head { padding-block: 32px clamp(72px, 9vw, 120px); max-width: 760px; margin-inline: 0; }
+  .vf-head .accent-bar { margin-bottom: 16px; }
+  .vf-head .mono { margin-bottom: 16px; }
+  .vf-title {
+    font-size: var(--t-display-l); font-weight: 700; letter-spacing: -0.03em;
+    line-height: 1.05; color: var(--ink); margin-bottom: 22px;
+  }
+  .vf-em { color: var(--teaching); font-style: italic; }
+  .vf-lede {
+    font-size: clamp(15.5px, 1.4vw, 18px); line-height: 1.6; color: var(--ink-mid);
+    margin-bottom: 36px; max-width: 56ch;
+  }
+
+  .vf-form { padding-top: 24px; border-top: 1px solid var(--line); }
+  .vf-label { display: block; font-size: var(--t-mono-sm); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint) !important; margin-bottom: 10px !important; }
+  .vf-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .vf-row input {
+    flex: 1 1 260px; min-width: 0; padding: 14px 16px; font: inherit; font-size: 16px;
+    font-family: var(--font-mono); letter-spacing: 0.04em;
+    color: var(--ink); background: var(--bg-elev);
+    border: 1px solid var(--line-strong); border-radius: 8px;
+  }
+  .vf-row input::placeholder { color: var(--ink-faint); }
+  .vf-row input:focus-visible { outline: 3px solid var(--teaching); outline-offset: 2px; }
+  .vf-btn {
+    padding: 14px 22px; font: inherit; font-weight: 700; cursor: pointer;
+    font-family: var(--font-mono); font-size: var(--t-mono); letter-spacing: 0.16em; text-transform: uppercase;
+    color: #141414; background: var(--teaching); border: 0; border-radius: 8px;
+    transition: filter 0.2s, gap 0.2s;
+  }
+  .vf-btn:hover { filter: brightness(0.94); }
+  .vf-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+  .vf-out {
+    margin-top: 28px; padding: 24px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--bg-elev);
+    border-left-width: 4px;
+  }
+  .vf-out[hidden] { display: none; }
+  .vf-out h2 { font-size: clamp(20px, 2vw, 24px); font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 8px; }
+  .vf-out p { color: var(--ink-mid); line-height: 1.6; margin: 0; }
+  .vf-out a { color: var(--ink); }
+  .vf-kicker {
+    font-size: var(--t-mono-sm); letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 12px !important; color: var(--ink-faint) !important;
+  }
+  .vf-ok { border-left-color: var(--success); }
+  .vf-ok .vf-kicker { color: var(--success) !important; }
+  .vf-tick { font-weight: 700; margin-right: 4px; }
+  .vf-bad { border-left-color: var(--alert); }
+  .vf-warn { border-left-color: var(--gold); }
+  .vf-name { font-size: clamp(26px, 3.4vw, 34px) !important; line-height: 1.1; }
+  .vf-statement { color: var(--ink) !important; font-size: 16.5px; margin-bottom: 20px !important; }
+  .vf-facts { margin: 0; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+  .vf-fact dt { font-size: var(--t-mono-sm); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px; }
+  .vf-fact dd { margin: 0; font-weight: 600; color: var(--ink); }
+</style>

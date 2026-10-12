@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   noFooter?: boolean;
+  noindex?: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description = 'TRI AI is the institutional home for programmes, research initiatives, and collaborations democratising AI knowledge across the African continent and the global research community.',
   ogImage = '/og-default.png',
   noFooter = false,
+  noindex = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -28,6 +30,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <title>{title}</title>
     <meta name="description" content={description} />
