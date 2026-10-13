@@ -96,20 +96,20 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
 <table width="100%" cellpadding="16" cellspacing="0">
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://dev-tri-ai.netlify.app/uploads/ayomide-odumakinde.jpg" alt="Research frontiers" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-a.jpg" alt="Research frontiers" width="120">
     </td>
     <td valign="top">
       <h3>Theme A: Research frontiers</h3>
       State-of-the-art ML and AI research: large language models, diffusion models, RLHF, multi-modal AI, graph neural networks, and in-context learning. Straight from research labs and academia.<br><br>
       <b>Abstract:</b> Evaluation has gone from scoring labels on fixed test sets, to probing knowledge and in-context learning in early GPT models, to tool use with React, to agents acting in live environments. The models changed; our evaluation habits mostly didn't. We still report one number for what is really a stochastic policy, shaped by sampling, tools, infrastructure and judges. This talk follows that history to show where inherited assumptions fail for agents, and offers practical fixes for evaluations you can trust.<br><br>
-      <b>Date:</b> Saturday, 24 October 2026<br>
+      <br><b>Date:</b> Saturday, 24 October 2026<br>
       <br><b>Time:</b> 10:00 AM – 12:00 PM WAT
     </td>
   </tr>
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779277867/TRI%20AI/about1_ltfxu5.jpg" alt="AI for Africa" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-b.jpg"" alt="AI for Africa" width="120">
     </td>
     <td valign="top">
       <h3>Theme B: AI for Africa</h3>
@@ -122,7 +122,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="images/theme-c.png" alt="AI in industry and product" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-c.jpg" alt="AI in industry and product" width="120">
     </td>
     <td valign="top">
       <h3>Theme C: AI in industry and product</h3>
@@ -135,7 +135,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="images/theme-d.png" alt="Ethics, policy, and governance" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-d.jpg"" alt="Ethics, policy, and governance" width="120">
     </td>
     <td valign="top">
       <h3>Theme D: Ethics, policy, and governance</h3>
@@ -148,7 +148,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
   <tr><td colspan="2"><hr></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="images/theme-e.png" alt="Inspiration and pathways" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-e.jpg" alt="Inspiration and pathways" width="120">
     </td>
     <td valign="top">
       <h3>Theme E: Inspiration and pathways</h3>
