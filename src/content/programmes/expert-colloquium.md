@@ -96,7 +96,7 @@ A selection of past sessions, with full recordings on the [AI Saturdays Lagos Yo
 <table width="100%" cellpadding="16" cellspacing="0">
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://res.cloudinary.com/kenechi-dukor/image/upload/v1779276964/TRI%20AI/ed69f583-7cff-4ee4-9b38-910b285a4efd_1_gz3hib.png" alt="Research frontiers" width="120">
+      <img src="public/uploads/ayomide-odumakinde.jpg" alt="Research frontiers" width="120">
     </td>
     <td valign="top">
       <h3>Theme A: Research frontiers</h3>
