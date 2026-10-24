@@ -5,7 +5,7 @@ date: 2026-10-24
 division: innovation
 excerpt: Meet the Three Teams Turning African Challenges into AI Research at TRI
   AI Cohort 10 Demo Day
-cover: /uploads/1001242918.jpg
+cover: /uploads/1001259209.jpg
 draft: false
 ---
 *From African language tokenisation to financial complaint analysis and mental health support, the three winning teams of TRI AI’s Cohort 10 Demo Day are exploring how AI research can address problems that matter to African communities.*
