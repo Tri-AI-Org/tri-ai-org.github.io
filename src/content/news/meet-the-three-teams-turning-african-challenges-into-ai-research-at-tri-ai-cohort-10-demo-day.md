@@ -9,13 +9,9 @@ draft: true
 ---
 *From African language tokenisation to financial complaint analysis and mental health support, the three winning teams of TRI AI’s Cohort 10 Demo Day are exploring how AI research can address problems that matter to African communities.*
 
-AI research becomes more meaningful when it starts with a problem people recognise.
+On Saturday, 3 October 2026, TRI AI hosted a live session for its AI Research Foundation Course 1-4 Cohort 10 Demo Day, where nine finalists presented projects they had developed during the programme. 
 
-For the participants of TRI AI’s AI Research Foundation Course Cohort 10, that meant looking beyond the excitement around artificial intelligence to examine challenges that require careful research, thoughtful data preparation and practical solutions.
-
-At the Cohort 10 Demo Day, nine finalists presented projects developed during the programme. Three teams emerged as winners: Team Bangweulu, which took first place; Team Atbara, which placed second; and Team Chamo, which finished third.
-
-Their projects address different challenges, but they share a common thread: each team is exploring how AI can be adapted to African contexts rather than assuming that existing tools will work equally well everywhere.
+Three teams emerged as winners: Team Bangweulu in first place, Team Atbara in second place, and Team Chamo in third.
 
 We spoke with the team leads about their projects, the challenges they encountered, what they learned during the course and what they hope to do next.
 
@@ -31,7 +27,7 @@ We spoke with the team leads about their projects, the challenges they encounter
 
 **Mentor:** Elinah Moyo
 
-**Project:** [Explore the project on GitHub](https://github.com/AtfiWiam/C10-team-Bangweulu)
+**Project:** **[Explore the project on GitHub](https://github.com/AtfiWiam/C10-team-Bangweulu)**
 
 AI systems process text using tokenisers, which break words and other text into smaller units that models can work with. But tokenisation methods developed primarily around English and other well-resourced languages may not handle the structure of African languages efficiently.
 
@@ -47,7 +43,7 @@ One of the team's biggest difficulties was sourcing and balancing datasets for l
 
 To address this, the team grouped languages into typological categories and used shuffled sampling. It also capped samples from other groups to match the size of the smallest dataset, an approach intended to reduce imbalance and prevent some languages from disproportionately influencing vocabulary allocation.
 
-The AI Research Foundation Course helped the team build its technical understanding of tokenisation and embeddings. Wiam also highlighted the value of data cards and impact statements in thinking through the relationship between technical performance and societal impact.
+The AI Research Foundation Course 1-4 helped the team build its technical understanding of tokenisation and embeddings. Wiam also highlighted the value of data cards and impact statements in thinking through the relationship between technical performance and societal impact.
 
 ### What winning meant
 
@@ -69,7 +65,7 @@ Wiam's advice to other builders is to remain resilient and test their assumption
 
 **Team members:** Nzube Ohalete, Sheree Edmund, Faith Kasunga and Sheila Nalweyiso
 
-**Project:** [Explore the project on GitHub](https://github.com/Elocodes/C10-team-atbara)
+**Project:** **[Explore the project on GitHub](https://github.com/Elocodes/C10-team-atbara)**
 
 As digital payments and cross-border commerce grow, financial institutions and payment providers must deal with large volumes of customer complaints. Understanding those complaints is not always straightforward, particularly when customers use local expressions, informal language or a mixture of languages.
 
@@ -117,7 +113,7 @@ Her message is a practical one: understanding the problem properly is as importa
 
 **Mentor:** Odion Joel Okonofua
 
-**Project:** [Explore the project on GitHub](https://github.com/iamcbn/C10-team-chamo)
+**Project:** **[Explore the project on GitHub](https://github.com/iamcbn/C10-team-chamo)**
 
 Access to mental health care remains a serious challenge in many African communities. Shortages of mental health professionals, geographical barriers and social stigma can make it difficult for people to seek support or receive timely assessment.
 
@@ -154,19 +150,5 @@ He wants the project to be developed ethically and used for good, rather than fo
 His advice to other African AI builders is to focus on genuine community problems and not let limited computing resources discourage them.
 
 Thoughtful problem framing and data engineering, he argues, can matter more than simply using greater computing power or fine-tuning larger models. He also encourages builders to prioritise ethics and real-world usability from the beginning, remain consistent and trust their teams and mentors.
-
-## Three Projects, One Shared Lesson
-
-The three winning teams approached different problems, but their experiences point to several shared lessons about doing AI research.
-
-Team Bangweulu examined how language structure affects the way AI processes African languages. Team Atbara focused on the challenges of interpreting financial complaints expressed through local language and context. Team Chamo explored the technical and ethical challenges of identifying potential mental health distress from text.
-
-None of these challenges can be solved by choosing a model alone. Each requires a clear problem definition, careful data preparation, rigorous evaluation and an understanding of the people who could be affected by the technology.
-
-The teams also show why learning to conduct research matters. Progress involves more than producing a working demonstration. It means testing assumptions, identifying limitations, explaining what a system can and cannot do, and deciding what evidence is needed before moving towards real-world use.
-
-For the three teams, Demo Day was a moment of recognition, but it was not the end of the work. Bangweulu aims to test its tokenizer within a larger language model pipeline, Atbara plans to strengthen its research towards publication, and Chamo hopes to improve its model and assess its potential application with mental health practitioners.
-
-Their next steps will determine how far these ideas can go. For now, their projects offer a useful reminder that African AI research can begin with local problems and contribute to questions that matter well beyond the continent.
 
 **Congratulations to Team Bangweulu, Team Atbara and Team Chamo on their achievements at TRI AI Cohort 10 Demo Day.**
