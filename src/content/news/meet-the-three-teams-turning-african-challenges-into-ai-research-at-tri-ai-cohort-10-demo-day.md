@@ -28,7 +28,7 @@ We spoke with the team leads about their projects, the challenges they encounter
 
 **Mentor:** Elinah Moyo
 
-**Project:** **Explore the project on GitHub**
+**Project:** **[Explore the project on GitHub](https://github.com/AtfiWiam/C10-team-Bangweulu)**
 
 AI systems process text using tokenisers, which break words and other text into smaller units that models can work with. But tokenisation methods developed primarily around English and other well-resourced languages may not handle the structure of African languages efficiently.
 
