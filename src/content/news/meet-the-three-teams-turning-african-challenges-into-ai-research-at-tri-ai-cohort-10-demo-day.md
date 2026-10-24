@@ -5,6 +5,7 @@ date: 2026-10-24
 division: innovation
 excerpt: Meet the Three Teams Turning African Challenges into AI Research at TRI
   AI Cohort 10 Demo Day
+cover: /uploads/1001242918.jpg
 draft: true
 ---
 *From African language tokenisation to financial complaint analysis and mental health support, the three winning teams of TRI AI’s Cohort 10 Demo Day are exploring how AI research can address problems that matter to African communities.*
@@ -15,9 +16,9 @@ Three teams emerged as winners: Team Bangweulu in first place, Team Atbara in se
 
 We spoke with the team leads about their projects, the challenges they encountered, what they learned during the course and what they hope to do next.
 
-## 1. Team Bangweulu: Rethinking How AI Processes African Languages
+## Team Bangweulu: Rethinking How AI Processes African Languages
 
-**Position: First place**
+![Team Bangweulu](/uploads/1001242915.jpg "Team Bangweulu")
 
 **Team lead:** Wiam Atfi
 
@@ -27,7 +28,7 @@ We spoke with the team leads about their projects, the challenges they encounter
 
 **Mentor:** Elinah Moyo
 
-**Project:** **[Explore the project on GitHub](https://github.com/AtfiWiam/C10-team-Bangweulu)**
+**Project:** **Explore the project on GitHub**
 
 AI systems process text using tokenisers, which break words and other text into smaller units that models can work with. But tokenisation methods developed primarily around English and other well-resourced languages may not handle the structure of African languages efficiently.
 
@@ -57,9 +58,9 @@ That next phase will be important for determining whether improvements in tokeni
 
 Wiam's advice to other builders is to remain resilient and test their assumptions rigorously. Progress, in research, often comes from discovering that an initial approach can be improved.
 
-## 2. Team Atbara: Making Financial Complaint Analysis More Context-Aware
+## Team Atbara: Making Financial Complaint Analysis More Context-Aware
 
-**Position: Second place**
+![Team Atbara](/uploads/1001242916.jpg "Team Atbara")
 
 **Team lead:** Justina Odoeze
 
@@ -103,9 +104,9 @@ For other African AI learners, Justina recommends starting with a specific probl
 
 Her message is a practical one: understanding the problem properly is as important as choosing the model.
 
-## 3. Team Chamo: Exploring Lightweight AI for Mental Health Support
+## Team Chamo: Exploring Lightweight AI for Mental Health Support
 
-**Position: Third place**
+![Team Chamo ](/uploads/1001242917.jpg "Team Chamo ")
 
 **Team lead:** Bruno Nwagbo
 
