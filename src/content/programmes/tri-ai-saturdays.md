@@ -17,7 +17,7 @@ status: active
 cover: https://res.cloudinary.com/kenechi-dukor/image/upload/v1779493712/TRI%20AI/ai6_simj2o.png
 cohortInfo: Applications for Cohort 11 announced via the newsletter
 cadence: 16-week cohorts, multiple per year
-partner: Google DeepMind (Cohort 10)
+partner: Google DeepMind (Cohort 11)
 applyUrl: https://tri-ai.org/programmes/tri-ai-saturdays/cohorts/10/
 githubUrl: https://github.com/AISaturdaysLagos
 websiteUrl: https://www.aisaturdayslagos.com/
