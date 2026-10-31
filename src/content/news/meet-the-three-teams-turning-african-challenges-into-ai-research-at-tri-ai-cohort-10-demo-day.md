@@ -22,7 +22,7 @@ We spoke to each team lead about their project, what went wrong along the way, w
 - **Team Atbara (2nd):** financial complaint analysis that understands local language
 - **Team Chamo (3rd):** lightweight AI for spotting signs of mental health distress in text
 
-[ADD IF AVAILABLE: link to the Demo Day recording]
+https://www.youtube.com/watch?v=JcIic4y5Tko
 
 ## Team Bangweulu: Rethinking How AI Processes African Languages
 
