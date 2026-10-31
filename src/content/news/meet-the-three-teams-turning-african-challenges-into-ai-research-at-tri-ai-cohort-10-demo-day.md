@@ -5,7 +5,7 @@ date: 2026-10-24
 division: innovation
 excerpt: Meet the Three Teams Turning African Challenges into AI Research at TRI
   AI Cohort 10 Demo Day
-cover: /uploads/triai-teaching-podium-awards.png
+cover: /uploads/triai-podium.png
 draft: false
 ---
 *Tokenisers for African languages, a financial complaint classifier that understands Pidgin and Sheng, and a lightweight model for spotting mental health distress: meet the three teams that won TRI AI's Cohort 10 Demo Day.*
