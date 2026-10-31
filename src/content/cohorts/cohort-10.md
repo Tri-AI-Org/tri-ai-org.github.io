@@ -3,7 +3,7 @@ programme: tri-ai-saturdays
 number: 10
 year: 2026
 title: Cohort 10 - AI Research Foundations w/ Google DeepMind
-status: running
+status: completed
 summary: A milestone tenth cohort, delivered in partnership with Google
   DeepMind. Sixteen weeks taking learners through DeepMind's AI Research
   Foundations Course 1–4, with hands-on work on Small Language Models,
@@ -16,29 +16,28 @@ partner: Google DeepMind
 projectsUrl: https://tri-ai.org/programmes/tri-ai-saturdays/cohorts/10/
 photoUrl: /uploads/cohorts/cohort-10-flyer.jpg
 ---
-
 The tenth cohort of TRI AI Saturdays is delivered in partnership with **Google DeepMind**. Over sixteen weeks beginning May 31, 2026, learners will work through DeepMind's AI Research Foundations Course 1–4, building and fine-tuning Small Language Models, exploring generative AI, and shipping capstone projects.
 
 ## Key dates
 
-- **Application deadline:** May 17, 2026
-- **Cohort start:** May 31, 2026
-- **Apply:** [tinyurl.com/triaicohort10](https://tinyurl.com/triaicohort10)
+* **Application deadline:** May 17, 2026
+* **Cohort start:** May 31, 2026
+* **Apply:** ~~[tinyurl.com/triaicohort10](https://tinyurl.com/triaicohort10)~~
 
 ## What participants will gain
 
-- **Mentorship** from working AI engineers and researchers
-- **Hands-on Small Language Model projects**
-- **Real-world AI career pathways**
+* **Mentorship** from working AI engineers and researchers
+* **Hands-on Small Language Model projects**
+* **Real-world AI career pathways**
 
 ## Curriculum
 
 The cohort follows Google DeepMind's AI Research Foundations Course 1–4, covering:
 
-- The mathematical and statistical foundations of modern AI
-- Building and training small language models
-- Generative AI techniques and applications
-- Capstone projects applying the methods to real-world African contexts
+* The mathematical and statistical foundations of modern AI
+* Building and training small language models
+* Generative AI techniques and applications
+* Capstone projects applying the methods to real-world African contexts
 
 ## Why this cohort matters
 
