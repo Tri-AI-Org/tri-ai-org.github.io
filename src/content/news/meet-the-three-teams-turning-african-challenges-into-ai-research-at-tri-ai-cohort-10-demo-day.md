@@ -10,19 +10,19 @@ draft: false
 ---
 *Tokenisers for African languages, a financial complaint classifier that understands Pidgin and Sheng, and a lightweight model for spotting mental health distress: meet the three teams that won TRI AI's Cohort 10 Demo Day.*
 
-On Saturday, 3 October 2026, nine finalists presented the projects they built on the AI Research Foundation Course 1-4 [CHECK: spell out what "Course 1-4" is, e.g. "our four-part AI Research Foundation Course"] at TRI AI's Cohort 10 Demo Day.
+On Saturday, 3 October 2026, nine finalists presented the projects they built on the AI Research Foundation Course 1-4 at TRI AI's Cohort 10 Demo Day.
 
-Three teams won: Team Bangweulu took first place, Team Atbara second and Team Chamo third. [OPTIONAL: add one line on how the teams are named, e.g. after African lakes and rivers, if that is the scheme.]
+Three teams won: Team Bangweulu took first place, Team Atbara second and Team Chamo third. 
 
 We spoke to each team lead about their project, what went wrong along the way, what the course gave them and what comes next.
 
 **At a glance**
 
-- **Team Bangweulu (1st):** a tokeniser designed for African languages
-- **Team Atbara (2nd):** financial complaint analysis that understands local language
-- **Team Chamo (3rd):** lightweight AI for spotting signs of mental health distress in text
+* **Team Bangweulu (1st):** a tokeniser designed for African languages
+* **Team Atbara (2nd):** financial complaint analysis that understands local language
+* **Team Chamo (3rd):** lightweight AI for spotting signs of mental health distress in text
 
-https://www.youtube.com/watch?v=JcIic4y5Tko
+ 
 
 ## Team Bangweulu: Rethinking How AI Processes African Languages
 
@@ -42,7 +42,7 @@ Before an AI model reads a sentence, a tokeniser chops the text into small piece
 
 Many African languages are morphologically rich: a single word can carry several meaningful parts, much like a whole English phrase packed into one word. A tokeniser that doesn't recognise those parts may shatter the word into many fragments. According to Team Bangweulu, that means more tokens, higher computing costs, slower processing and, potentially, a weaker representation of meaning.
 
-The team built a morphologically aware SuperBPE tokeniser, a variant of the standard byte-pair encoding method, aimed at making tokenisation more efficient across more than 30 African languages. [ADD IF AVAILABLE: one headline result, e.g. "reduced token counts by X% compared with Y".]
+The team built a morphologically aware SuperBPE tokeniser, a variant of the standard byte-pair encoding method, aimed at making tokenisation more efficient across more than 30 African languages. 
 
 For the team, this is about more than saving tokens. African languages shouldn't be disadvantaged because the tools that process them were never designed with them in mind.
 
@@ -135,6 +135,8 @@ His next steps are about using the work responsibly as much as turning it into a
 Bruno is also wary of misuse. He wants the project developed ethically and used for good, never for stereotyping or profiling people, a risk that matters for any tool that interprets people's emotional states.
 
 His advice to African AI builders: focus on genuine community problems, and don't let limited computing resources put you off. Careful problem framing and data engineering, he argues, can matter more than raw computing power or fine-tuning ever-larger models. Put ethics and real-world usability first from the start, stay consistent, and trust your team and mentors.
+
+Watch the Complete recording session of the Demo Here - [Link](https://www.youtube.com/watch?v=JcIic4y5Tko)
 
 ## What's next
 
