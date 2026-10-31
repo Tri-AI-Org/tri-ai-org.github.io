@@ -78,7 +78,7 @@ As digital payments and cross-border commerce grow, banks and payment providers 
 
 Team Atbara noticed that customer-service tools built around standard English or rigid keyword rules often stumble on Nigerian Pidgin, Kenyan Sheng and other everyday forms of speech. Complaints can also refer to payment systems and financial services specific to one country.
 
-The cost of getting it wrong is real: complaints sent to the wrong team, delayed fixes and urgent problems that go unnoticed. The team set out to build an AI approach that reads complaints in context. [ADD IF AVAILABLE: one headline result, e.g. accuracy or number of complaints used.]
+The cost of getting it wrong is real: complaints sent to the wrong team, delayed fixes and urgent problems that go unnoticed. The team set out to build an AI approach that reads complaints in context.
 
 ### Learning to define the problem carefully
 
@@ -122,7 +122,7 @@ A text model cannot diagnose a mental health condition on its own. Any real-worl
 
 The team's main technical challenge was making sure the model didn't treat ordinary negative emotions as clinical distress, while keeping it light enough to run cheaply. A sad, fearful or angry message doesn't necessarily point to a mental health condition, and a model that confuses the two will mislead.
 
-To teach the difference, the team added 30,000 “hard negative” statements to its dataset of 52,681 mental health statements [CHECK: name the dataset's source]. These were messages expressing sadness, fear or anger that were labelled as non-distress.
+To teach the difference, the team added 30,000 “hard negative” statements to its dataset of 52,681 mental health statements [=. These were messages expressing sadness, fear or anger that were labelled as non-distress.
 
 Bruno said the course's modules on representation learning, regularisation and rigorous evaluation shaped how the team probed the model and tuned its hyperparameters.
 
@@ -140,4 +140,4 @@ His advice to African AI builders: focus on genuine community problems, and don'
 
 Congratulations to Team Bangweulu, Team Atbara and Team Chamo.
 
-Want to follow in their footsteps? Applications for TRI AI Saturdays Cohort 11, run with Google DeepMind, will be announced through our newsletter, The Encoder. [LINK: subscribe / programme page]
+Want to follow in their footsteps? Applications for TRI AI Saturdays Cohort 11, run with Google DeepMind, will be announced through our newsletter, The Encoder (see newsletter form below.
