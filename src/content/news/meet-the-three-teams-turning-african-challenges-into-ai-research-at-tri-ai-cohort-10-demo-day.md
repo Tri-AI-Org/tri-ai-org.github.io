@@ -122,7 +122,7 @@ A text model cannot diagnose a mental health condition on its own. Any real-worl
 
 The team's main technical challenge was making sure the model didn't treat ordinary negative emotions as clinical distress, while keeping it light enough to run cheaply. A sad, fearful or angry message doesn't necessarily point to a mental health condition, and a model that confuses the two will mislead.
 
-To teach the difference, the team added 30,000 “hard negative” statements to its dataset of 52,681 mental health statements [=. These were messages expressing sadness, fear or anger that were labelled as non-distress.
+To teach the difference, the team added 30,000 “hard negative” statements to its dataset of 52,681 mental health statements. These were messages expressing sadness, fear or anger that were labelled as non-distress.
 
 Bruno said the course's modules on representation learning, regularisation and rigorous evaluation shaped how the team probed the model and tuned its hyperparameters.
 
@@ -142,4 +142,4 @@ Watch the Complete recording session of the Demo Here - [Link](https://www.youtu
 
 Congratulations to Team Bangweulu, Team Atbara and Team Chamo.
 
-Want to follow in their footsteps? Applications for TRI AI Saturdays Cohort 11, run with Google DeepMind, will be announced through our newsletter, The Encoder (see newsletter form below.
+Want to follow in their footsteps? Applications for TRI AI Saturdays Cohort 11, run with Google DeepMind, will be announced through our newsletter, The Encoder (see newsletter form below).
