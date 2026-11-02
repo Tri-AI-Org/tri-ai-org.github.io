@@ -5,6 +5,7 @@ date: 2026-11-02
 division: parent
 excerpt: "Turning Hope into Action: The AI Research and Innovations Shaping
   Africa | The Encoder, Issue 19"
+cover: /uploads/1001204364.jpg
 draft: false
 ---
 Across Africa, researchers, innovators and technology builders are exploring how emerging technologies can address real-world challenges. From developing AI models for African languages to improving agricultural services and strengthening digital infrastructure, their work is helping move research and innovation forward.
@@ -30,6 +31,8 @@ The top three teams stood out for their projects and the work behind them.
 ### Ten Cohorts. One Question: What Difference Have We Made?
 
 AI Saturdays Lagos started in 2018. Ten cohorts later, now as TRI AI, the organisation is taking a closer look at the impact of its work.
+
+![]()
 
 The question is simple: what difference has the community made in the lives and careers of the people who have been part of it?
 
@@ -319,6 +322,6 @@ The work of building useful AI systems continues across Africa. From research an
 
 Keep learning. Keep researching. Keep building.
 
-**The Encoder | Teaching. Research. Innovation.**
+![Advert ](/uploads/1001204417.jpg "Advert ")
 
 [Explore more from TRI AI](https://tri-ai.org/)
