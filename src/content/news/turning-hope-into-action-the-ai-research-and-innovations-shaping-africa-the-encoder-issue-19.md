@@ -3,12 +3,13 @@ title: "Turning Hope into Action: The AI Research and Innovations Shaping Africa
   | The Encoder, Issue 19"
 date: 2026-11-02
 division: parent
-excerpt: "Turning Hope into Action: The AI Research and Innovations Shaping
-  Africa | The Encoder, Issue 19"
+excerpt: The Encoder, Issue 19
 cover: /uploads/1001204364.jpg
 draft: false
 ---
 Across Africa, researchers, innovators and technology builders are exploring how emerging technologies can address real-world challenges. From developing AI models for African languages to improving agricultural services and strengthening digital infrastructure, their work is helping move research and innovation forward.
+
+![](/uploads/1001259443.jpg)
 
 But developing new technology is only part of the process. Testing ideas, evaluating results and understanding what needs improvement are equally important.
 
@@ -26,13 +27,11 @@ The presentations highlighted how participants are applying their knowledge to r
 
 The top three teams stood out for their projects and the work behind them.
 
-**Read more:** [Meet the Three Teams Turning African Challenges into AI Research at TRI AI Cohort 10 Demo Day](https://tri-ai.org/blog/meet-the-three-teams-turning-african-challenges-into-ai-research-at-tri-ai-cohort-10-demo-day/)
+**Read more:** **[Meet the Three Teams Turning African Challenges into AI Research at TRI AI Cohort 10 Demo Day](https://tri-ai.org/blog/meet-the-three-teams-turning-african-challenges-into-ai-research-at-tri-ai-cohort-10-demo-day/)**
 
 ### Ten Cohorts. One Question: What Difference Have We Made?
 
 AI Saturdays Lagos started in 2018. Ten cohorts later, now as TRI AI, the organisation is taking a closer look at the impact of its work.
-
-![]()
 
 The question is simple: what difference has the community made in the lives and careers of the people who have been part of it?
 
@@ -218,16 +217,7 @@ A two-day conference bringing together academic and industry perspectives on eme
 
 [Apply Here](https://www.conferencealerts.in/eventdetail/1878211)
 
-### Lagos AI Summit 2026
 
-A one-day, practitioner-led summit for AI builders, founders, engineers and enterprise leaders.
-
-The event will feature discussions across financial services, healthcare, AI products and governance.
-
-**Date:** 23 November 2026
-**Location:** Oriental Hotel, Victoria Island, Lagos, Nigeria
-
-[Visit the Lagos AI Summit Website](https://www.lagosaisummit.com/)
 
 ### Senior AI Engineer: Agentic Systems and Automation
 
@@ -298,13 +288,7 @@ As generative AI becomes more accessible, developments like this highlight the g
 
 Before we wrap up, here is the riddle from this edition.
 
-"I am not the model, but the model is nothing without me.
-
-The more of me it sees, the more it learns.
-
-If I am wrong or missing, it learns the wrong thing, or nothing at all.
-
-What am I?"
+![Riddle ](/uploads/1001259444.jpg "Riddle ")
 
 **The answer is: DATA.**
 
