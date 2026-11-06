@@ -3,7 +3,7 @@ title: "Turning Hope into Action: The AI Research and Innovations Shaping Africa
   | The Encoder, Issue 19"
 date: 2026-11-02
 division: parent
-excerpt: The Encoder, Issue 19
+excerpt: Every great change begins with a simple idea
 cover: /uploads/1001204364.jpg
 draft: false
 ---
