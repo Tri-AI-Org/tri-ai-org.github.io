@@ -2,7 +2,7 @@
 title: When AI Knowledge Moves Into Action | The Encoder, Issue 18
 date: 2026-10-04
 division: parent
-excerpt: When AI Knowledge Moves Into Action | The Encoder, Issue 18
+excerpt: Knowledge without work is nothing
 cover: /uploads/1001204364.jpg
 draft: false
 ---
