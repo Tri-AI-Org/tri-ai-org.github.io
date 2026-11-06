@@ -1,6 +1,6 @@
 ---
-title: "Turning Hope into Action: The AI Research and Innovations Shaping Africa
-  | The Encoder, Issue 19"
+title: "The Encoder, Issue 19 | Turning Hope into Action: The AI Research and
+  Innovations Shaping Africa"
 date: 2026-11-02
 division: parent
 excerpt: The Encoder, Issue 19
