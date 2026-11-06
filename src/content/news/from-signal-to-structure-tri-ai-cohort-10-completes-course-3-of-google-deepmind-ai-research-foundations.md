@@ -1,9 +1,11 @@
 ---
-title: "From Signal to Structure: TRI AI Cohort 10 Completes Course 3 of Google
+title: "From Signal to Structure: Cohort 10 Completes Course 3 of Google
   DeepMind AI Research Foundations"
 date: 2026-09-23
 division: teaching
-excerpt: A progress diary from the TRI AI Saturdays organising team
+excerpt: Ten weeks in, and the cohort has gone from cleaning multilingual text
+  to building tokenizers to now understanding, from first principles, how a
+  neural network actually learns
 cover: ""
 draft: false
 ---
