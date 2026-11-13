@@ -71,7 +71,7 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
   <tr><td colspan="2"><br><hr><br></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://dev-tri-ai.netlify.app/uploads/theme-b.jpg" alt="AI for Africa" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-d.jpg" alt="AI for Africa" width="120">
     </td>
     <td valign="top">
       <h3>Theme D: Ethics, policy, and governance</h3>
