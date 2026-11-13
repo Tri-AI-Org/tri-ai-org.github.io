@@ -63,15 +63,15 @@ Open to TRI AI cohort graduates, partner institution students, and invited membe
     <td valign="top">
       <h3>Theme C: AI in industry and product</h3>
       Building and deploying AI products: MLOps, model evaluation, responsible AI in production, AI startup journeys, and career paths in AI engineering. Grounded in practice.<br><br>
-      <b>Abstract:</b> <i>Coming soon.</i><br><br>
-      <b>Date:</b> To be announced<br><br>
-      <b>Time:</b> To be announced
+      <b>Abstract:</b> AI systems need context to make sense of the information they encounter, and memory is only useful when what is remembered is accurate, organised, and retrievable. Drawing on Archivi.ng’s work preserving and making Nigerian newspaper history accessible, Fu’ad Lawal explores what archiving can teach us about context and memory in AI. The talk looks at choices archives must make—what to preserve, how to describe it, and how people find and interpret it—and connects those choices to the challenge of giving AI systems reliable context over time. It asks how historical records can help both people and AI make more grounded sense of the present.<br><br>
+ <b>Date:</b> Saturday, 28 November 2026<br><br>
+      <b>Time:</b> 11:00 AM – 1:00 PM WAT
     </td>
   </tr>
   <tr><td colspan="2"><br><hr><br></td></tr>
   <tr>
     <td width="160" valign="top" align="center">
-      <img src="https://dev-tri-ai.netlify.app/uploads/theme-d.jpg" alt="Ethics, policy, and governance" width="120">
+      <img src="https://dev-tri-ai.netlify.app/uploads/theme-b.jpg" alt="AI for Africa" width="120">
     </td>
     <td valign="top">
       <h3>Theme D: Ethics, policy, and governance</h3>
