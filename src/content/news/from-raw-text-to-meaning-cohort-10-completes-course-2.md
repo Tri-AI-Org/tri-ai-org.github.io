@@ -1,9 +1,10 @@
 ---
-title: "From Raw Text to Meaning: Cohort 10 Completes Course 2"
+title: "From Raw Text to Meaning: Cohort 10 Completes Course 2 of Google
+  DeepMind AI Research Foundations"
 date: 2026-08-19
 division: teaching
-excerpt: |
-  A progress diary from the TRI AI Saturdays organising team
+excerpt: Six weeks in, and the cohort has gone from predicting single words with
+  n-grams to preprocessing real multilingual datasets
 draft: false
 ---
 Last time, we told you how [Cohort 10 wrapped Course 1](https://tri-ai.org/blog/three-weeks-in-how-cohort-10-learned-to-think-like-a-language-model/); Participants trained their first small language model and learned to think in n-grams and probabilities. Since then, the cohort has moved from *"how do language models predict the next word?"* to a much more hands-on question: **how do you turn raw, messy, human text — in dozens of languages — into something a model can actually learn from?**

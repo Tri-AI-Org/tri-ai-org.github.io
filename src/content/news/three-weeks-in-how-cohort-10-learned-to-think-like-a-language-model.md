@@ -1,8 +1,9 @@
 ---
-title: "Three Weeks In: How Cohort 10 Learned to Think Like a Language Model"
+title: "Thinking Like a Language Model: Cohort 10 Completes Course 1 of Google
+  DeepMind AI Research Foundations"
 date: 2026-07-24
 division: teaching
-excerpt: A progress diary from the TRI AI Saturdays organising team
+excerpt: "Three Weeks In: How Cohort 10 Learned to Think Like a Language Model"
 cover: /uploads/img_20260711_131502_202-compressed.14552pdf.png
 draft: false
 ---
